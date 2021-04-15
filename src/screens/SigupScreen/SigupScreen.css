@@ -1,0 +1,126 @@
+.main-signin {
+    background: url(https://media.ex-cdn.com/EXP/media.nhadautu.vn/files/content/2020/12/25/giai-nhat-thuyen-hoa-0103.jpg) no-repeat bottom;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 100vh;
+    padding: 2em 0;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+}
+.main-signin:before {
+    position: absolute;
+    content:'';
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+.content-w3ls {
+    margin: 2em auto;
+    padding: 2em 2em;
+}
+.content-w3ls img{
+    margin-bottom: 2em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 4px solid rgb(255 255 255 / 9%);
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 14px;
+}
+.wthree-field {
+    margin-bottom:14px;
+}
+.wthree-field input {
+    padding: 14px 30px;
+    font-size: 16px;
+    color: #999;
+    letter-spacing: 0.5px;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+}
+.wthree-field button.btn:hover {
+    background:#de3d7b;
+}
+.login-bottom {
+    margin-top:3em;
+}
+.login-bottom a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    text-transform: capitalize;
+}
+.wthree-field button.btn {
+    background: #EA4C89;
+    border: none;
+    color: #fff;
+    padding: 14px 14px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+	width:100%;
+    letter-spacing:1px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    border-radius: 35px;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	-ms-border-radius: 35px;
+    -o-border-radius: 35px;
+
+}
+.logo h1 a {
+    font-size: 42px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.content-w3ls {
+    margin: 2em auto;
+    padding: 2em 2em;
+}
+.content-w3ls img{
+    margin-bottom: 2em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 4px solid rgb(255 255 255 / 9%);
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 14px;
+}

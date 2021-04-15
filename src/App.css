@@ -1,6 +1,6 @@
 /*-- header --*/
 .header-top{
-	padding:2em 0;
+	padding:1em 0;
 	border-bottom: solid 1px #e3e3e3;
 }
 .header-logo a{
@@ -95,6 +95,7 @@
 }
 .top-nav{
 	float:left;
+	margin-top: 0;
 }
 span.menu {
   display: none;
@@ -168,37 +169,140 @@ ul.navig li a:after{
   color: #7e7f84;
   padding: .7em .7em .7em 2em;
 }
-/*-- banner --*/
-
-.bottom-grid img{
-	width:100%;
-  height: 500px;
-}
-.bottom-grid-info {
-  margin: 1em 0 0 0;
-}
-.bottom-grid a{
-	color: #f45a40;
-	font-size: 26px;
-	font-family: 'Roboto Condensed', sans-serif;
-}
-.bottom-grid-info a{
-  color: white;
-  font-size: 30px;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-.bottom-grid-info p{
-  color: white;
-  font-size: 20px;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-.bottom-grid p{
+.header-logo p{
 	color: #7e7f84;
-	margin: 1em 0 0 0;
-	font-size: 14px;
+	font-size: 30px;
+	font-weight: bold;
 }
-.carousel-control-prev,.carousel-control-next{
-  margin-top: 170px;
+/* ------footer-------- */
+footer {
+    background: #212121;
+}
+.footer-grids a {
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.footer-grids i {
+    color: #f2994a;
+    margin-right: 10px;
+}
+.footer-grids {
+    border-bottom: 1px solid #464646;
+}
+p.para {
+    margin: 0;
+    font-size: 0.95em;
+    color: #a5a3a3;
+    line-height: 2em;
+    letter-spacing: 1px;
+}
+.subscribe-grid {
+    margin: 0 auto;
+    width: 70%;
+}
+.subscribe-grid h5 {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 19px;
+     letter-spacing: 2px;
+    font-weight: 600;
+}
+.subscribe-grid p.para{
+    color: #aaa;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 1em 0 2em;
+	text-transform: lowercase;
+}
+.subscribe-grid p {
+    color: #f2994a;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 1em 0 2em;
+	text-transform: capitalize;
+}
+.subscribe-grid p span {
+    color: #fff;
+     font-weight: 600;
+    margin: 0 5px;
+    text-decoration: underline;
+}
+
+.subscribe-grid form {
+	position: relative;
+     width: 70%;
+    margin: auto;
+}
+.subscribe-grid form:hover input[type="email"] {
+	border: solid 2px rgba(255, 255, 255, 0.14);
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	transition: 0.5s all;
+}
+
+.subscribe-grid input[type="email"] {
+	display: inline-block;
+     background: transparent;
+	border: solid 2px #32343a;
+	width: 100%;
+	outline: none;
+	padding: 1em 4em 1em 1em;
+	font-size: 1em;
+	color: #fff;
+	border-radius: 0px;
+	letter-spacing: 1px;
+}
+
+.subscribe-grid i.fa.fa-paper-plane-o {
+	font-size: 1.2em !important;
+}
+
+.subscribe-grid button.btn1 {
+	color: #fff;
+	border: none;
+	width: 65px;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	cursor: pointer;
+	background: transparent;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	transition: 0.5s all;
+}
+
+.subscribe-grid button.btn1:focus {
+	outline: none;
+}
+
+button.btn1:hover {
+	background: none;
+	color: #ffa200;
+}
+
+button.btn1:hover i.fa.fa-paper-plane-o {
+	color: #ffa200 !important;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.btn {
+    color: #4d6171;
+    letter-spacing: 1px;
+    border: none !important;
+    outline: none;
+}
+.btn span {
+    color: #ffa200
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,9 +1,10 @@
 
 import './App.css';
 import './css/nav.css';
-import Owl from  './js/owl';
-import $ from 'jquery'
-import { useEffect } from 'react';
+import {BrowserRouter, Link, Route} from 'react-router-dom'
+import HomeScreen from './screens/HomeScreen/HomeScreen';
+import SigninScreen from './screens/SigninScreen/SigninScreen';
+import SignupScreen from './screens/SigupScreen/SigupScreen';
 function App() {
   // $(function(){
   //   $('.owl-carousel').owlCarousel({
@@ -14,7 +15,7 @@ function App() {
   // })
 
   return (
-    <div>
+    <BrowserRouter>
       <div className="App">
       <div className="header">
         {/* container */}
@@ -22,21 +23,25 @@ function App() {
           {/* header-top */}
           <div className="header-top">
             <div className="header-logo">
-              <a href="index.html"><img src="images/logo.png" alt="" /></a>
+              <Link to="/"><p>X-TECH</p></Link> 
             </div>
             <div className="header-right">
               <ul>
                 <li className="phone">+371 282 20 760</li>
                 <li className="mail"><a href="mailto:example@mail.com">eony321v@gmail.com</a></li>
                 <li className="checkout">
-                  <a href="add-to-cart.html">
+                  <div class="forms ml-auto">
+                    <Link to="/Signin" class="btn"><span class="fas fa-sign-in-alt"></span> Sign In</Link>
+                    <Link to="/Signup" class="btn"><span class="fas fa-user-plus"></span> Sign Up</Link>
+                  </div>
+                  {/* <a href="add-to-cart.html">
                     <span className="cart">$ 99.54</span>
                     <span className="check">Checkout</span>
                   </a>
                   <div className="shopping">
                     <h5>Your Shopping Cart is empty.</h5>
                     <p>Give it purpose—fill it with books, movies, mobiles, cameras, toys and fashion jewellery.</p>
-                  </div>
+                  </div> */}
                 </li>
               </ul>
             </div>
@@ -92,7 +97,7 @@ function App() {
           </div>
           <div className="search">
             <form>
-              <input type="text" defaultValue="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}" required />
+              <input type="text" placeholder="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}" required />
             </form>
           </div>
           <div className="clearfix"> </div>
@@ -101,58 +106,44 @@ function App() {
         {/* //container */}
       </div>
     </div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner ">
-          <div class="carousel-item active">
-            <div class="bottom-grid">
-              <img src="https://vn.blog.kkday.com/wp-content/uploads/blogcover-1.jpg" alt="" />
+    <main className="main">
+      <div className="content">
+      <Route path="/" exact={true} component={HomeScreen}></Route>
+      <Route path="/Signin" component={SigninScreen}></Route>
+      <Route path="/Signup" component={SignupScreen}></Route>
+      </div>
+    </main>
+    <footer className="py-5">
+        <div className="container py-md-3">
+          <div className="row footer-grids pb-md-5 pb-3">	
+            <div className="col-md-3 col-sm-6 col-6">
+              <a href="#"> <i className="fa fa-phone" />Call Us</a>
             </div>
-            <div class="carousel-caption d-none d-md-block">
-              <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
-                </p>
-              </div>
+            <div className="col-md-3 col-sm-6 col-6">
+              <a href="#"> <i className="fa fa-envelope" />Send Message</a>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="bottom-grid">
-              <img src="https://vn.blog.kkday.com/wp-content/uploads/blogcover-1.jpg" alt="" />
+            <div className="col-md-3 col-sm-6 col-6 mt-md-0 mt-2">
+              <a href="#"> <i className="fa fa-skype" />Skype Call</a>
             </div>
-            <div class="carousel-caption d-none d-md-block">
-              <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
-                </p>
-              </div>
+            <div className="col-md-3 col-sm-6 col-6 mt-md-0 mt-2">
+              <a href="#"> <i className="fa fa-comment" />Online Chat</a>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="bottom-grid">
-              <img src="https://vn.blog.kkday.com/wp-content/uploads/blogcover-1.jpg" alt="" />
-            </div>
-            <div class="carousel-caption d-none d-md-block">
-              <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
-                </p>
-              </div>
-            </div>
+          <div className="subscribe-grid text-center">
+            <p className="para three mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet </p>
+            <h5>Subscribe for our latest updates</h5>
+            <p>Get
+              <span>10%</span> off on booking</p>
+            <form action="#" method="post">
+              <input className="form-control" type="email" placeholder="Subscribe" name="Subscribe" required />
+              <button className="btn1">
+                <i className="fa fa-paper-plane" />
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>    
+      </footer>
+    </BrowserRouter>    
   );
 
 }
