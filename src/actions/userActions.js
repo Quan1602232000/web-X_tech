@@ -1,7 +1,7 @@
 import axios from "axios";
 import {USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGISTER_REQUEST,
     USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_SIGNOUT} from '../constants/userConstant'
-    const signin = (email, password) => async (dispatch) =>  {
+   const signin = (email, password) => async (dispatch) =>  {
         dispatch({type: USER_SIGNIN_REQUEST, payload:{email, password}});
             try{
                 const {data} = await axios.get( 'http://localhost:4000/api/users?email='+email+'&password='+password)
@@ -46,4 +46,4 @@ import {USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGISTE
         dispatch({ type: USER_SIGNOUT });
         document.location.href = '/signin';
     };       
-export {signin, register,signout };
+export { signin,register,signout };

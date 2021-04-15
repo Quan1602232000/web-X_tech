@@ -1,11 +1,18 @@
-
 import './App.css';
 import './css/nav.css';
 import {BrowserRouter, Link, Route} from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import SigninScreen from './screens/SigninScreen/SigninScreen';
 import SignupScreen from './screens/SigupScreen/SigupScreen';
+import { useDispatch, useSelector } from 'react-redux';
+import { signout } from './actions/userActions';
 function App() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout()); 
+  };
   // $(function(){
   //   $('.owl-carousel').owlCarousel({
   //     items:1,
@@ -15,6 +22,7 @@ function App() {
   // })
 
   return (
+    
     <BrowserRouter>
       <div className="App">
       <div className="header">
@@ -30,18 +38,25 @@ function App() {
                 <li className="phone">+371 282 20 760</li>
                 <li className="mail"><a href="mailto:example@mail.com">eony321v@gmail.com</a></li>
                 <li className="checkout">
-                  <div class="forms ml-auto">
+                  {userInfo.length>0? 
+                  (<div>
+                    <a href="add-to-cart.html">
+                    <span className="cart">{userInfo[0].displayName}</span>
+                    {/* <span className="check">Checkout</span> */}
+                  </a>
+                  <div className="shopping">
+                    <Link to="#signout" onClick={signoutHandler}>SignOut</Link>
+                    {/* <h5>Your Shopping Cart is empty.</h5>
+                    <p>Give it purpose—fill it with books, movies, mobiles, cameras, toys and fashion jewellery.</p> */}
+                  </div>
+                  </div>):
+                  (
+                    <div class="forms ml-auto">
                     <Link to="/Signin" class="btn"><span class="fas fa-sign-in-alt"></span> Sign In</Link>
                     <Link to="/Signup" class="btn"><span class="fas fa-user-plus"></span> Sign Up</Link>
                   </div>
-                  {/* <a href="add-to-cart.html">
-                    <span className="cart">$ 99.54</span>
-                    <span className="check">Checkout</span>
-                  </a>
-                  <div className="shopping">
-                    <h5>Your Shopping Cart is empty.</h5>
-                    <p>Give it purpose—fill it with books, movies, mobiles, cameras, toys and fashion jewellery.</p>
-                  </div> */}
+                  )
+                  }                
                 </li>
               </ul>
             </div>
