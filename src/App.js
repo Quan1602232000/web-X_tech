@@ -1,25 +1,48 @@
 import './App.css';
-import './css/nav.css';
+
 import {BrowserRouter, Link, Route} from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import SigninScreen from './screens/SigninScreen/SigninScreen';
 import SignupScreen from './screens/SigupScreen/SigupScreen';
+import Weather from './screens/Weather/Weather';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
+import React,{useState,useEffect} from 'react';
+import RentMotoScreen from './screens/RentMotoScreen/RentMotoScreen';
+import MotoScreendetail from './screens/MotoScreendetail/MotoScreendetail';
+import CartScreen from './screens/CartScreen/CartScreen';
+
 function App() {
+  // Configure Firebase.
+  // const config = {
+  //   apiKey: 'AIzaSyAOyi6lfv3wIbrY6l1zfx5RBbAXy9ET-TQ',
+  //   authDomain: 'x-tech-4a3b4.firebaseapp.com',
+    
+  // };
+  // firebase.initializeApp(config);
+
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  const cart = useSelector((state)=>state.cart);
+  const {cartItems} = cart;
   const dispatch = useDispatch();
   const signoutHandler = () => {
     dispatch(signout()); 
   };
-  // $(function(){
-  //   $('.owl-carousel').owlCarousel({
-  //     items:1,
-  //     margin:10,
-  //     autoHeight:true
-  // });
-  // })
+  // console.log(userInfo);
+  // useEffect(() => {
+  //   const unregisterAuthObserver = firebase.auth().onAuthStateChanged(async (user) => {
+  //     if(!user){
+  //       return;
+  //     }
+  //     console.log('logged in user', user.displayName)
+  //     const token =await user.getIdToken();
+  //     console.log('Logged in user token: ',token)
+  //   });
+  //   return () => unregisterAuthObserver(); 
+  // }, []);
 
   return (
     
@@ -36,12 +59,12 @@ function App() {
             <div className="header-right">
               <ul>
                 <li className="phone">+371 282 20 760</li>
-                <li className="mail"><a href="mailto:example@mail.com">eony321v@gmail.com</a></li>
-                <li className="checkout">
+                <li className="mail"><a href="mailto:example@mail.com">XTech@gmail.com</a></li>
+                <li className="userinfo">
                   {userInfo.length>0? 
                   (<div>
                     <a href="add-to-cart.html">
-                    <span className="cart">{userInfo[0].displayName}</span>
+                    <span className="profile">{userInfo[0].displayName}</span>
                     {/* <span className="check">Checkout</span> */}
                   </a>
                   <div className="shopping">
@@ -57,6 +80,17 @@ function App() {
                   </div>
                   )
                   }                
+                </li>
+                <li>
+                  <form action="#" method="post" class="btn-cart">
+                    <Link to="/cart">
+                      <span class="fas fa-shopping-cart"></span>
+                      <button class="top_transmitv_cart" type="submit" name="submit" value="">
+                        My Cart
+                      </button>
+                    </Link>
+                    {cartItems.length>0&&<span className="badge">{cartItems.length}</span>}  
+                  </form>
                 </li>
               </ul>
             </div>
@@ -75,38 +109,37 @@ function App() {
                   <li><a href="single.html">behance</a></li>
                 </ul>
               </li>
-              <li className="dropdown1"><a href="men.html">MEN</a>
+              <li className="dropdown1"><a href="men.html">THUÊ XE</a>
                 <ul className="dropdown2">
-                  <li><a href="men.html">Clothing</a></li>
-                  <li><a href="men.html">Footwear</a></li>
-                  <li><a href="men.html">Watches</a></li>
-                  <li><a href="men.html">Accessories</a></li>
+                  <li><a href="men.html">Xe Số</a></li>
+                  <li><a href="men.html">Xe Tay Ga</a></li>
+                  <li><a href="men.html">Xe Côn</a></li>
                 </ul>
               </li>     
-              <li className="dropdown1"><a href="women.html">WOMEN</a>
+              <li className="dropdown1"><a href="women.html">ĐỊA ĐIỂM ĂN UỐNG</a>
                 <ul className="dropdown2">
-                  <li><a href="women.html">Ethnic Wear</a></li>
-                  <li><a href="women.html">Western Wear</a></li>
-                  <li><a href="women.html">All Jewellery</a></li>
-                  <li><a href="women.html">Beauty &amp; Wellness</a></li>
+                  <li><a href="women.html">NHÀ HÀNG</a></li>
+                  <li><a href="women.html">ĐỒ ĂN VẶT</a></li>
+                  {/* <li><a href="women.html">All Jewellery</a></li> */}
+                  {/* <li><a href="women.html">Beauty &amp; Wellness</a></li> */}
                 </ul>
               </li>              
-              <li className="dropdown1"><a href="women.html">KIDS</a>
+              <li className="dropdown1"><a href="women.html">ĐỊA ĐIỂM THAM QUAN</a>
                 <ul className="dropdown2">
-                  <li><a href="women.html">Clothing</a></li>
-                  <li><a href="women.html">Footwear</a></li>
-                  <li><a href="women.html">Accessories</a></li>
+                  <li><a href="women.html">DI TÍCH LỊCH SỬ</a></li>
+                  <li><a href="women.html">CÔNG TRÌNH VĂN HÓA</a></li>
+                  <li><a href="women.html">NƠI MUA SẮM</a></li>
                 </ul>
               </li>  
-              <li className="dropdown1"><a href="men.html">SALE</a>
+              {/* <li className="dropdown1"><a href="men.html">SALE</a>
                 <ul className="dropdown2">
                   <li><a href="men.html">Clothing</a></li>
                   <li><a href="men.html">Footwear</a></li>
                   <li><a href="men.html">Watches</a></li>
                   <li><a href="men.html">Accessories</a></li>
                 </ul>
-              </li>  					           
-              <li><a href="about.html">ABOUT US</a></li>            
+              </li>  					            */}
+              <li><Link to="/Weather">THỜI TIẾT</Link></li>            
               <li><a href="404.html">SUPPORT</a></li>
             </ul>
           </div>
@@ -126,6 +159,10 @@ function App() {
       <Route path="/" exact={true} component={HomeScreen}></Route>
       <Route path="/Signin" component={SigninScreen}></Route>
       <Route path="/Signup" component={SignupScreen}></Route>
+      <Route path="/Weather" component={Weather}></Route>
+      <Route path="/RentMoto" component={RentMotoScreen}></Route>
+      <Route path="/MotoDetail/:id" component={MotoScreendetail}></Route>
+      <Route path="/Cart/:id?" component={CartScreen}></Route>
       </div>
     </main>
     <footer className="py-5">
@@ -138,7 +175,7 @@ function App() {
               <a href="#"> <i className="fa fa-envelope" />Send Message</a>
             </div>
             <div className="col-md-3 col-sm-6 col-6 mt-md-0 mt-2">
-              <a href="#"> <i className="fa fa-skype" />Skype Call</a>
+              <a href="#"> <i className="fab fa-skype" />Skype Call</a>
             </div>
             <div className="col-md-3 col-sm-6 col-6 mt-md-0 mt-2">
               <a href="#"> <i className="fa fa-comment" />Online Chat</a>

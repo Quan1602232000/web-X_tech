@@ -2,9 +2,9 @@ import React from 'react';
 import './HomeScreen.css';
 
 function HomeScreen() {
-    return (
-        <div>
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  return (
+    <div>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner ">
           <div class="carousel-item active">
             <div class="bottom-grid">
@@ -14,7 +14,7 @@ function HomeScreen() {
               <div class="bottom-grid-info">
                 <a href="#">FOOTBALL SHOES</a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
+                vivamus congue nulla leo, quis imperdiet magna.
                 </p>
               </div>
             </div>
@@ -27,7 +27,7 @@ function HomeScreen() {
               <div class="bottom-grid-info">
                 <a href="#">FOOTBALL SHOES</a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
+                vivamus congue nulla leo, quis imperdiet magna.
                 </p>
               </div>
             </div>
@@ -40,7 +40,7 @@ function HomeScreen() {
               <div class="bottom-grid-info">
                 <a href="#">FOOTBALL SHOES</a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                  vivamus congue nulla leo, quis imperdiet magna.
+                vivamus congue nulla leo, quis imperdiet magna.
                 </p>
               </div>
             </div>
@@ -125,8 +125,8 @@ function HomeScreen() {
           </div>
         </div>
       </section>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default HomeScreen
