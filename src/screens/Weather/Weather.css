@@ -4,17 +4,17 @@
     margin: 0;
 }
 
-.contaniner-weather {
+.container-weather {
     color: white;
     background: linear-gradient(145deg, #2193b0 ,#6dd5ed);
     width: 400px;
-    margin: 50px auto;
+    margin: 20px auto;
     border-radius: 10px;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
 }
 
-.search-bar-weather{
+.search-bar{
     width: 50%;
     margin: 0 auto;
     padding-top: 20px;
@@ -25,7 +25,7 @@
     border-bottom: 1px solid white;
 }
 
-.search-icon-weather{
+.search-icon{
     margin-right: 5px;
     position: absolute;
     left: 0px;
@@ -40,6 +40,7 @@
     color: white;
 }
 
+/* Sử dụng element giả */
 #search-input::placeholder{
     color: rgb(206,206,206);
 }
@@ -55,7 +56,7 @@
 
 .city-name{
     font-size: 20px;
-    margin-top: 150px;
+    margin-bottom: 5px;
 }
 
 .weather-state{
@@ -68,12 +69,13 @@
 }
 
 .temperature{
-    font-size: 80px;
+    font-size: 70px;
     font-weight: lighter;
     line-height: 1;
     position: relative;
 }
 
+/* Sử dụng element giả */
 .temperature::after{
     content: 'o';
     position: absolute;
@@ -89,7 +91,7 @@
 }
 
 .additional-section .row{
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     display: flex;
 }
 
@@ -98,6 +100,7 @@
     flex-direction: column;
     flex: 1; 
 }
+/* Ta muốn các item sẽ hiển thị cạnh nhau trong từng row thì set flex là 1. Để  flex:1 có thể apply cho các item thì cha của class itemm cũng phải có display:flex*/
 
 .additional-section .item .label{
     font-weight: bold;

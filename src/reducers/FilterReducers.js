@@ -7,7 +7,13 @@ import {
     SEARCH_MOTO_ALL_SUCCESS,
     SEARCH_MOTO_ALL_FAIL,
     SEARCH_MOTO_ALL_REQUEST,
-    FILTER_MOTO_FAIL
+    FILTER_MOTO_FAIL,
+    FILTER_FOOD_REQUEST,
+    FILTER_FOOD_GIA_SUCCESS,
+    FILTER_FOOD_RATING_SUCCESS,
+    FILTER_FOOD_NOTALL_SUCCESS,
+    FILTER_FOOD_ALL_SUCCESS,
+    FILTER_FOOD_FAIL
 } from '../constants/FilterConstan';
 function filterproduct(state = { products: [] }, action) {
     switch (action.type) {
@@ -27,6 +33,24 @@ function filterproduct(state = { products: [] }, action) {
             return state;
     }
 }
+function filterfoodsReducer(state = { foods_filter: [] }, action) {
+    switch (action.type) {
+        case FILTER_FOOD_REQUEST:
+            return { loading: true, foods_filter: [] };
+        case FILTER_FOOD_GIA_SUCCESS:
+            return { loading: false, foods_filter: action.payload };
+        case FILTER_FOOD_RATING_SUCCESS:
+            return { loading: false, foods_filter: action.payload };
+        case FILTER_FOOD_NOTALL_SUCCESS:
+            return { loading: false, foods_filter: action.payload };
+        case FILTER_FOOD_ALL_SUCCESS:
+            return { loading: false, foods_filter: action.payload };
+        case FILTER_FOOD_FAIL:
+            return { loading: false, error: action.payload };
+        default:
+            return state;
+    }
+}
 function SearchReducer(state = { searchproducts: [] }, action) {
     switch (action.type) {
         case SEARCH_MOTO_ALL_REQUEST:
@@ -40,5 +64,5 @@ function SearchReducer(state = { searchproducts: [] }, action) {
     }
 }
 export {
-    filterproduct, SearchReducer
+    filterproduct, SearchReducer,filterfoodsReducer
 }

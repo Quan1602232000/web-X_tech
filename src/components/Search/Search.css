@@ -1,0 +1,14 @@
+.search {
+	float:left;
+	  margin: .3em 0 0 1em;
+}
+.search input[type="text"] {
+  display: inline-block;
+  background: url() no-repeat 0px 14px;
+  border: none;
+  margin: 0;
+  outline: none;
+  font-size: 14px;
+  color: #7e7f84;
+  padding: .7em .7em .7em 2em;
+}

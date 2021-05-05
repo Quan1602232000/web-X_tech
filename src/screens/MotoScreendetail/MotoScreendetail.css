@@ -64,8 +64,8 @@ span.item_price {
     letter-spacing: 0.5px;
 }
 .product-single-w3l ul li {
-    list-style: inside;
-    font-size: 14px;
+    list-style: none;
+    font-size: 16px;
     margin-bottom: 5px;
     line-height: 1.7;
 }
@@ -273,4 +273,7 @@ h3.tittle-w3l-detail {
         transition: 0.3s ease-in;
         border-radius: 8px;
         background-color: var(--primary-color);
+    }
+    .Information_Rent{
+        display: block;
     }

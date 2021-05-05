@@ -14,6 +14,7 @@ const addToCart =(productid, qty)=> async (dispatch, getState)=>{
         image: data.image,
         price: data.price,
         brand: data.brand,
+        userId:data.userId,
         qty,
       }
     });

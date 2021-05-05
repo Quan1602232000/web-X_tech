@@ -5,12 +5,13 @@ import Motobike from '../../components/Motobike/Motobike';
 import { Filtermoto, SearchName } from '../../actions/FilterActions';
 import './RentMotoScreen.css';
 
-function RentMotoScreen() {
+function RentMotoScreen(props) {
 
     const [page, setPage] = useState(1);
     const [Loaixe, setLoaixe] = useState('ALL');
     const [gia, setGia] = useState('ALL');
     const [searchtext, setSearchtext] = useState('')
+    const city=props.location.search ? props.location.search.split("=")[1] : '';
     // const productList = useSelector((state) => state.productList);
     // const productlistcount = useSelector((state) => state.productcount);
     // const { product, loading, error } = productList;
@@ -49,7 +50,7 @@ function RentMotoScreen() {
         };
     }, []);
     useEffect(() => {
-        dispatch(SearchName(searchtext, page));
+        dispatch(SearchName(searchtext, page,city));
 
         return () => {
             //
@@ -63,7 +64,7 @@ function RentMotoScreen() {
     //     };
     // }, [page]);
     useEffect(() => {
-        dispatch(Filtermoto(Loaixe, gia, page, searchtext));
+        dispatch(Filtermoto(Loaixe, gia, page, city));
 
         return () => {
 
@@ -71,6 +72,7 @@ function RentMotoScreen() {
     }, [Loaixe, gia, page]);
     return (
         <div className="container background">
+            
             <div>
                 <div>
                     <div class="row">
@@ -137,13 +139,19 @@ function RentMotoScreen() {
                 }
             </ul>) : (loading ? <div>Loading...</div> :
                 error ? <div>{error}</div> :
-                    (
+                    (products.length>0?
                         <ul class="list-moto animated wow slideInLeft" data-wow-delay=".5s">
                             {products.map((product) => (
                                 <Motobike key={product.id} product={product}></Motobike>
                             ))
                             }
-                        </ul>))}
+                        </ul>:(
+                            <div class="not-found">
+                            
+                            <img src="https://lh3.googleusercontent.com/proxy/RG39UHd_sx7seuQ9ZgoTmbAr21DIxn9gv_jfMUL4A6IVNJbshp-Uv0s-uqfLC8dGWHhKsfD5mrHegGJWDUaZFCjvjSNwN18MWMNcVOU" class="img-responsive text-center" alt="Image"/>
+                            
+                        </div>
+                        )))}
             <div className="pagination">
                 <li className="li_pagination">
                     <button onClick={downpagenumber} type="button" class="btn btn-outline-primary">Back</button>

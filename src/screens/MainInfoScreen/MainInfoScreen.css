@@ -1,0 +1,324 @@
+.w3l-grids-hny-2 .welcome-image {
+    text-align: center;
+  }
+  
+  .w3l-grids-hny-2 .welcome-image h4 {
+    margin-top: 20px;
+  }
+  
+  .w3l-grids-hny-2 .welcome-image h4 a {
+    font-size: 18px;
+    line-height: 30px;
+    color: #232020;
+    display: block;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .w3l-grids-hny-2 .welcome-image h4 a:hover {
+    color: #ff7315;
+  }
+  
+  .w3l-grids-hny-2 h6 {
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #ff6768;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13 {
+    position: relative;
+    transition: all .2s ease-out 0s;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13 .boxhny-content,
+  .w3l-grids-hny-2 .boxhny13:after {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13:after {
+    content: "";
+    display: block;
+    background: rgba(31, 28, 28, 0.74902);
+    top: 20px;
+    bottom: 20px;
+    opacity: 0;
+    transform: rotate3d(-1, 1, 0, 100deg);
+    transition: all .4s ease-in-out 0s;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13:hover:after {
+    opacity: .9;
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  
+  .w3l-grids-hny-2 .boxhny13 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+  
+ .boxhny13 .boxhny-content {
+    top: 45%;
+    opacity: 0;
+    z-index: 1;
+    transform: translate(10%, 30%);
+    transition: all .2s ease-out 0s;
+    text-align: center;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13:hover .boxhny-content {
+    opacity: 1;
+    transform: translate(0, -50%);
+    transition-delay: .2s;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13 .title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    padding-top: 14px;
+  }
+  
+  .w3l-grids-hny-2 .boxhny13 .title:hover {
+    color: #ff7315;
+  }
+  h3.hny-title,
+h3.hny-title.two {
+  font-size: 40px;
+  line-height: 50px;
+  color: #232020;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+h3 .hny-title-owl{
+  font-size: 30px;
+  line-height: 50px;
+  color: #232020;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.title-owl ::after{
+  content: "";
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 5px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: #ff5722;
+}
+
+h3.hny-title.two {
+  color: #fff;
+}
+
+h3.hny-title span,
+h3.hny-title span {
+  color: #ff7315;
+}
+.welcome-grids a {
+    font-size: 15px;
+    display: inline-block;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding:0px;
+    border-radius: 35px;
+    background: white;
+    text-decoration: none;
+}
+.w3l-content-w-photo-6{
+    background-color: #f4f4f4;
+}
+.w3l-about-breadcrumb h2.title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .breadcrumb-bg-about {
+    margin-top: 95px;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7)), url(https://phuquyland.net/wp-content/uploads/2019/09/du-l%E1%BB%8Bch-%C4%90%C3%A0-N%E1%BA%B5ng-11.jpg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center;
+    background-attachment: fixed; }
+    a.read-more.btn {
+        display: inline-block;
+        outline: none;
+        border: none;
+        font-weight: 600;
+        padding: 12px 32px;
+        font-size: 16px;
+        background-color: #232020;
+        margin-top: 20px;
+        color: #fff;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -o-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -moz-border-radius: 25px;
+      }
+      
+      a.read-more.btn:hover {
+        background-color: #ff7315;
+      }
+      .photo-6-inf-left img{
+          border-radius: 10px;
+      }
+      .video-grids-info {
+        align-items: center;
+      }
+      .video-gd-right {
+        background: url(https://static.ebk.vn/thienduongholiday.com/images/mk-av.jpg) no-repeat center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        -moz-background-size: cover;
+        z-index: 9;
+        position: relative;
+        min-height: 32em;
+        display: grid;
+        align-items: center;
+      }
+      
+      .video-gd-right::before {
+        content: "";
+        background: rgba(21, 19, 19, 0.43);
+        position: absolute;
+        top: 0;
+        min-height: 100%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+      }
+      
+      .video-gd-right h6 {
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      
+      .video-grids-info p {
+        font-size: 16px;
+        font-weight: normal;
+        margin-top: 10px;
+      }
+      
+      .video-inner a.play-button {
+        width: 72px;
+        height: 72px;
+        display: inline-block;
+        color: #fff;
+        background: #ffffff33;
+        border-radius: 50%;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+        border: none;
+      }
+      
+      .video-inner a.play-button:hover {
+        background: #ff7315;
+      }
+      
+      .video-inner a.play-button span {
+        line-height: 60px;
+        text-align: center;
+        margin-left: 2px;
+      }
+      
+      .video-inner p {
+        color: #6b778d;
+      }
+      
+      iframe {
+        width: 100%;
+        min-height: 300px;
+      }
+      .gal-img img {
+        background: #fff;
+        width: 100%;
+    }
+    .gal-info:hover {
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      -ms-transition: 0.5s all;
+  }
+  .property-info-list {
+    padding: 1.2em 1em;
+    background: #0f3285;
+}
+
+.property-info-list.mode-info {
+    background: none;
+}
+.detail h4.title a {
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.detail ul li {
+  list-style: none;
+  width: 44%;
+  float: left;
+  font-weight: 400;
+  font-size: 13px;
+  color: #bbb5b5;
+  margin: 0.5em 0;
+}
+
+.detail ul li span {
+  color: #fff;
+}
+
+.detail ul li:hover span,
+.footer-properties:hover a {
+  color: #ef9632;
+}
+
+.detail .location a,
+.footer-properties a {
+    font-size: 13px;
+    color: #bbb5b5;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+ul.facilities-list span {
+  margin-right: 0.5em;
+}
+.footer-properties {
+  border-top: 1px solid #3d558e;
+  padding-top: 0.7em;
+  margin-top: 1em;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+/* .owl-carousel{
+  display: block !important;
+  height: 430.56px;
+} */

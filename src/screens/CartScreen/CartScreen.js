@@ -43,7 +43,7 @@ function CartScreen(props) {
                                 : (cartItems.map(item =>
                                     <tr key={item.id} className="rem1">
                                         <td className="invert">1</td>
-                                        <td className="invert-image"><a href="single.html"><img src={item.image} alt=" " className="img-responsive" /></a></td>
+                                        <td className="invert-image"><Link to={'/MotoDetail/'+item.id+'?userId='+item.userId}><img src={item.image} alt=" " className="img-responsive" /></Link></td>
                                         <td className="invert">
                                             <div className="quantity">
                                                 <div className="quantity-select">
