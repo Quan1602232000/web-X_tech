@@ -21,6 +21,7 @@ import FoodReviewScreen from './screens/FoodReviewScreen/FoodReviewScreen'
 import ReviewScrennDetail from './screens/ReviewScrennDetail/ReviewScrennDetail'
 import TodolistSreen from './screens/TodolistSreen/TodolistSreen'
 import NoteScreen from './screens/NoteScreen/NoteScreen'
+import scheduleScreen from './screens/scheduleScreen/scheduleScreen'
 
 
 function App(props) {
@@ -156,6 +157,7 @@ function App(props) {
           <Route path="/ReviewScrennDetail" component={ReviewScrennDetail}></Route>
           <Route path="/TodolistSreen" component={TodolistSreen}></Route>
           <Route path="/NoteScreen" component={NoteScreen}></Route>
+          <Route path="/scheduleScreen" component={scheduleScreen}></Route>
         </div>
       </main>
       <footer className="py-5">

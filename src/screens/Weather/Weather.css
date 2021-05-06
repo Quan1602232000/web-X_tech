@@ -8,13 +8,13 @@
     color: white;
     background: linear-gradient(145deg, #2193b0 ,#6dd5ed);
     width: 400px;
-    margin: 20px auto;
+    margin: 50px auto;
     border-radius: 10px;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
 }
 
-.search-bar{
+.search-weather-bar{
     width: 50%;
     margin: 0 auto;
     padding-top: 20px;
@@ -25,13 +25,13 @@
     border-bottom: 1px solid white;
 }
 
-.search-icon{
+.search-weather-icon{
     margin-right: 5px;
     position: absolute;
     left: 0px;
 }
 
-#search-input{
+#search-weather-input{
     border: 0px;
     outline: none;
     padding: 3px 3px 3px 20px;
@@ -41,11 +41,11 @@
 }
 
 /* Sử dụng element giả */
-#search-input::placeholder{
+#search-weather-input::placeholder{
     color: rgb(206,206,206);
 }
 
-.info-wrapper{
+.info-wrapper-weather{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,7 +82,7 @@
     font-size: 30px;
 }
 
-.additional-section{
+.additional-section-weather{
     border-top: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -90,27 +90,27 @@
     font-size: 13px;
 }
 
-.additional-section .row{
+.additional-section-weather .row-weather{
     margin-bottom: 8px;
     display: flex;
 }
 
-.item{
+.item-weather{
     display: flex;
     flex-direction: column;
     flex: 1; 
 }
-/* Ta muốn các item sẽ hiển thị cạnh nhau trong từng row thì set flex là 1. Để  flex:1 có thể apply cho các item thì cha của class itemm cũng phải có display:flex*/
+/* Ta muốn các item sẽ hiển thị cạnh nhau trong từng row-weather thì set flex là 1. Để  flex:1 có thể apply cho các item thì cha của class itemm cũng phải có display:flex*/
 
-.additional-section .item .label{
+.additional-section-weather .item-weather .label{
     font-weight: bold;
 }
 
-.microphone{
+.microphone-weather{
     cursor: pointer;
 }
 
-.microphone .recording-icon{
+.microphone-weather .recording-icon{
     display: none;
     width: 10px;
     height: 10px;
@@ -131,10 +131,10 @@
     }
 }
 
-.microphone.recording .recording-icon{
+.microphone-weather.recording .recording-icon{
     display: inline-block;
 }
 
-.microphone.recording .fa-microphone{
+.microphone-weather.recording .fa-microphone{
     display: none;
 }

@@ -1,0 +1,32 @@
+.listschedule{
+    border: 0.5px solid #cccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    
+}
+.Btn_schedule{
+    display: flex;
+    list-style: none;
+}
+.Day_CiTy{
+    border-top: 0.5px solid #cccc;
+    margin-top: 10px;
+}
+.listAddress{
+    border: 0.5px solid #cccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.card-address{
+    margin: auto;
+    height: 500px;
+    overflow: auto;
+}
+.card img{
+    height: 200px;
+}
+.listDay{
+    border: 0.5px solid #cccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}

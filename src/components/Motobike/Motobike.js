@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Motobike(props) {
     const qty=1;
-    const { product } = props;
+    const { product } = props;//constn product =props.product
     let history = useHistory();
     const handleAddToCart = (id) => {
         history.push('/cart/'+id+'?qty=' +qty);    

@@ -235,7 +235,7 @@ function ReviewScrennDetail(props) {
                                             <span class="fa fa-bus" aria-hidden="true"></span>
                                         </div>
                                         <div class="ser-sevice-grid">
-                                            <h4 class="pb-3">Di chuyển đến Bà Nà Hills</h4>
+                                            <h4 class="pb-3">Di chuyển đến {Review_Detail_1.length > 0 ? Review_Detail_1[0].Name : ""}</h4>
                                             <p>Đi xe ô tô: Bạn có thể chọn đi taxi, grab hoặc thuê xe có người lái, thậm chí là thuê xe tự lái</p>
                                             <p>Đi xe máy: Đây là phương tiện thuận tiện, tiết kiệm, phù hợp hơn cả với các bạn trẻ, hay các bạn nào bị say ô tô</p>
                                             <p>Đi tour ghép: Việc đi tour ghép có rất nhiều lợi ích: không lo tìm đường, cháy vé, nguy hiểm khi lưu thông, ăn uống, được hướng dẫn viên chăm lo, hướng dẫn, giới thiệu các địa danh trên Bà Nà cũng như các công trình và ý nghĩa của nó</p>
@@ -248,7 +248,7 @@ function ReviewScrennDetail(props) {
                 </div>
             </section>
             <div class="content_tieude">
-                <h1 class="mb-3 text-center tieude">6 Lễ Hội Độc Đáo Nhất Bà Nà Hills</h1>
+                <h1 class="mb-3 text-center tieude">Độc Đáo ở {Review_Detail_1.length > 0 ? Review_Detail_1[0].Name : ""}</h1>
             </div>
             <div class="w3-food-menu" id="ourmenu">
                 <div class="container">

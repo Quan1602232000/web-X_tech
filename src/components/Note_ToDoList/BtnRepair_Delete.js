@@ -5,7 +5,8 @@ import { GetTodolist, PostTodolist, GetDataTodolist, PostDataTodolist, PutDataTo
 
 function BtnRepair_Delete(props) {
     const{todolistId,DES,Note,Status,idData}=props
-    const [des, setDES] = useState(props.DES)
+    const Test=1;
+    const [des, setDES] = useState(Test)
     const [note, setNote] = useState(Note)
     const [status, setStatus] = useState(Status)
 
