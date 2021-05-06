@@ -33,7 +33,8 @@ import {GettodolistReducer,
         PosttodolistReducer,
         GetDataTodolistReducer,
         PostDataTodolistReducer,
-        PutDataTodolistReducer} from './reducers/NoteReducer'       
+        PutDataTodolistReducer,
+        GetDataTodolistIDReducer} from './reducers/NoteReducer'       
 
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -90,7 +91,8 @@ const reducer = combineReducers({
     Posttodolist:PosttodolistReducer,
     Data_todolist_Get:GetDataTodolistReducer,
     Post_Data_Todolist:PostDataTodolistReducer,
-    Put_Data_Todolist:PutDataTodolistReducer
+    Put_Data_Todolist:PutDataTodolistReducer,
+    GetDatatodolist_id:GetDataTodolistIDReducer
 });
 const store = createStore(
     reducer,

@@ -16,7 +16,10 @@ import {
     NOTE_PUT_DATA_TODOLIST_FAIL,
     NOTE_DELETE_DATA_TODOLIST_REQUEST,
     NOTE_DELETE_DATA_TODOLIST_SUCCESS,
-    NOTE_DELETE_DATA_TODOLIST_FAIL
+    NOTE_DELETE_DATA_TODOLIST_FAIL,
+    NOTE_GET_DATA_TODOLIST_ID_REQUEST,
+    NOTE_GET_DATA_TODOLIST_ID_SUCCESS,
+    NOTE_GET_DATA_TODOLIST_ID_FAIL
 } from '../constants/NoteConstant';
 
 import axios from 'axios';
@@ -59,6 +62,18 @@ const GetDataTodolist =(todolistId)=> async (dispatch)=>{
         dispatch({ type: NOTE_GET_DATA_TODOLIST_FAIL, payload: error.message });
     }
 }
+const GetDataTodolist_id =(id)=> async (dispatch)=>{
+    try{
+        dispatch({ type: NOTE_GET_DATA_TODOLIST_ID_REQUEST, payload:id });
+        const { data } = await axios.get("http://localhost:4000/api/data_todolist/"+id);
+            dispatch({
+                type: NOTE_GET_DATA_TODOLIST_ID_SUCCESS, payload: data
+            });
+    }
+    catch (error) {
+        dispatch({ type: NOTE_GET_DATA_TODOLIST_ID_FAIL, payload: error.message });
+    }
+}
 const PostDataTodolist =(todolistId,Place,Note,status)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_POST_DATA_TODOLIST_REQUEST, payload:{todolistId,Place,Note,status} });
@@ -86,7 +101,7 @@ const PutDataTodolist =(id,todolistId,Place,Note,status)=> async (dispatch)=>{
 const DeleteDataTodolist =(id)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_DELETE_DATA_TODOLIST_REQUEST, payload:id });
-        const { data } = await axios.delete("http://localhost:400:0/api/data_todolist/"+id);
+        const { data } = await axios.delete("http://localhost:4000/api/data_todolist/"+id);
             dispatch({
                 type: NOTE_DELETE_DATA_TODOLIST_SUCCESS, payload: data
             });
@@ -96,5 +111,5 @@ const DeleteDataTodolist =(id)=> async (dispatch)=>{
     }
 }
 export{
-    GetTodolist,PostTodolist,GetDataTodolist,PostDataTodolist,PutDataTodolist,DeleteDataTodolist
+    GetTodolist,PostTodolist,GetDataTodolist,PostDataTodolist,PutDataTodolist,DeleteDataTodolist,GetDataTodolist_id
 }

@@ -14,6 +14,9 @@ import {
     NOTE_PUT_DATA_TODOLIST_REQUEST,
     NOTE_PUT_DATA_TODOLIST_SUCCESS,
     NOTE_PUT_DATA_TODOLIST_FAIL,
+    NOTE_GET_DATA_TODOLIST_ID_REQUEST,
+    NOTE_GET_DATA_TODOLIST_ID_SUCCESS,
+    NOTE_GET_DATA_TODOLIST_ID_FAIL,
     NOTE_DELETE_DATA_TODOLIST_REQUEST,
     NOTE_DELETE_DATA_TODOLIST_SUCCESS,
     NOTE_DELETE_DATA_TODOLIST_FAIL
@@ -55,6 +58,18 @@ function GetDataTodolistReducer(state = { Data_todolist: [] }, action) {
         return state;
     }
 }
+function GetDataTodolistIDReducer(state = { Data_todolist_ID: {} }, action) {
+  switch (action.type) {
+    case NOTE_GET_DATA_TODOLIST_ID_REQUEST:
+      return { loading: true, Data_todolist_ID: {} };
+    case NOTE_GET_DATA_TODOLIST_ID_SUCCESS:
+      return { loading: false, Data_todolist_ID: action.payload };
+    case NOTE_GET_DATA_TODOLIST_ID_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+}
 function PostDataTodolistReducer(state = { Post_Data_todolist: {} }, action) {
     switch (action.type) {
       case NOTE_POST_DATA_TODOLIST_REQUEST:
@@ -80,5 +95,5 @@ function PutDataTodolistReducer(state = { Put_Data_todolist: {} }, action) {
     }
 }
 export {
-    GettodolistReducer,PosttodolistReducer,GetDataTodolistReducer,PostDataTodolistReducer,PutDataTodolistReducer
+    GettodolistReducer,PosttodolistReducer,GetDataTodolistReducer,PostDataTodolistReducer,PutDataTodolistReducer,GetDataTodolistIDReducer
 }
