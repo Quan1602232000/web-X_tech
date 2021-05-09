@@ -22,6 +22,7 @@ function SigupScreen(props) {
           //
         };
       }, [userInfo]);
+    const image=""
 
     const submitHandler = (e) => {
         e.preventDefault();

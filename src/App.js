@@ -22,17 +22,30 @@ import ReviewScrennDetail from './screens/ReviewScrennDetail/ReviewScrennDetail'
 import TodolistSreen from './screens/TodolistSreen/TodolistSreen'
 import NoteScreen from './screens/NoteScreen/NoteScreen'
 import scheduleScreen from './screens/scheduleScreen/scheduleScreen'
+import { GetTodolist, PostTodolist} from './actions/NoteActions'
+import ScheduleAddScreen from './screens/scheduleAddScreen/scheduleAddScreen'
+import CheckoutScreen from './screens/CheckoutScreen/CheckoutScreen'
 
 
 function App(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  const usersigninId = userInfo.length > 0 ? userInfo[0].id : null
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const Todolist_Get = useSelector((state) => state.Todolist_Get)
+  const { Todolist } = Todolist_Get
   const dispatch = useDispatch();
+  console.log( Todolist)
   const signoutHandler = () => {
     dispatch(signout());
   };
+  useEffect(() => {
+    dispatch(GetTodolist(usersigninId))
+    return () => {
+
+    }
+}, [usersigninId])
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -131,7 +144,8 @@ function App(props) {
                 </ul>
               </li>  					            */}
                 <li><Link to="/Weather">THỜI TIẾT</Link></li>
-                <li><Link to="/TodolistSreen">GHI CHÚ</Link></li>
+                {Todolist.length==0?<li><Link to="/ScheduleAddScreen">GHI CHÚ</Link></li> :<li><Link to="/scheduleScreen">GHI CHÚ</Link></li>}
+                
               </ul>
             </div>
             <Search></Search>
@@ -158,6 +172,9 @@ function App(props) {
           <Route path="/TodolistSreen" component={TodolistSreen}></Route>
           <Route path="/NoteScreen" component={NoteScreen}></Route>
           <Route path="/scheduleScreen" component={scheduleScreen}></Route>
+          <Route path="/ScheduleAddScreen" component={ScheduleAddScreen}></Route>
+          <Route path="/CheckoutScreen" component={CheckoutScreen}></Route>
+
         </div>
       </main>
       <footer className="py-5">

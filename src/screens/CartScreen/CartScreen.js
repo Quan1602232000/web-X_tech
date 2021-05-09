@@ -18,6 +18,9 @@ function CartScreen(props) {
             dispatch(addToCart(productId, Qty));
         }
     }, []);
+    const checkoutHandle =()=>{
+        props.history.push('/CheckoutScreen')
+    }
     return (
         <div className="checkout mt-5 ">
             <div className="container ">
@@ -79,7 +82,7 @@ function CartScreen(props) {
                 </div>
                 <div className="checkout-left">
                     <div className="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-                        <Link to="/RentMoto"><h4>Continue to basket</h4></Link>
+                        <Link to="/RentMoto/?city=Đà Nẵng"><h4>Continue to basket</h4></Link>
                         <ul>
                             {
                                 cartItems.length === 0 ?
@@ -92,7 +95,7 @@ function CartScreen(props) {
                         </ul>
                     </div>
                     <div className="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-                        <button disabled={cartItems.length === 0} href=""><span className="glyphicon glyphicon-menu-left" aria-hidden="true" />Checkout</button>
+                        <button onClick={checkoutHandle} disabled={cartItems.length === 0} href=""><span className="glyphicon glyphicon-menu-left" aria-hidden="true" />Checkout</button>
                     </div>
                     <div className="clearfix"> </div>
                 </div>

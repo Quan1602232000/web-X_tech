@@ -1,0 +1,17 @@
+.background_Schedule{
+    background: url(https://www.wrike.com/blog/content/uploads/2020/01/Five-Features-of-a-Good-Monthly-Employee-Work-Schedule-Template.jpg)no-repeat bottom;
+    background-size: 1349px 700px;
+    height: 700px;
+}
+.Title_Main h3{
+    color: white;
+    font-weight: bold;
+}
+.Lable_Style label{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+/* .btn{
+    color: white;
+} */

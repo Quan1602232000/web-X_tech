@@ -12,9 +12,8 @@ function HomeScreen() {
             </div>
             <div class="carousel-caption d-none d-md-block">
               <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                vivamus congue nulla leo, quis imperdiet magna.
+                <a href="#">DIVADI</a>
+                <p>Hãy Để Chúng Tôi Mang Đến Cho Bạn Những Trải Nghiệm Tuyệt vời
                 </p>
               </div>
             </div>
@@ -25,9 +24,8 @@ function HomeScreen() {
             </div>
             <div class="carousel-caption d-none d-md-block">
               <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                vivamus congue nulla leo, quis imperdiet magna.
+                <a href="#">DIVADI</a>
+                <p>Hãy Để Chúng Tôi Mang Đến Cho Bạn Những Trải Nghiệm Tuyệt vời
                 </p>
               </div>
             </div>
@@ -38,9 +36,8 @@ function HomeScreen() {
             </div>
             <div class="carousel-caption d-none d-md-block">
               <div class="bottom-grid-info">
-                <a href="#">FOOTBALL SHOES</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing,
-                vivamus congue nulla leo, quis imperdiet magna.
+                <a href="#">DIVADI</a>
+                <p>Hãy Để Chúng Tôi Mang Đến Cho Bạn Những Trải Nghiệm Tuyệt vời
                 </p>
               </div>
             </div>
@@ -57,12 +54,12 @@ function HomeScreen() {
       </a>
       <section className="welcome py-5">
         <div className="container py-3">
-          <h3 className="heading text-center mb-md-5 mb-4"> About Us </h3>
+          <h3 className="heading text-center mb-md-5 mb-4"> Giới Thiệu Về Chúng Tôi </h3>
           <div className="row welcome-grids">
             <div className="col-lg-6">
-              <h4 className="mb-3">welcome to the travel world</h4>
-              <h3>Remember that happiness is a way of travel, not a destination.</h3>
-              <p className="my-4">Aliquam consequat rhoncus ipsum et hendrerit. Proin sed nibhila rin iaculis, aliquet nunc nec, ornare nulla. Duis maximus faucibus ipsum consectetur. Donec elementum hendrerit arcu id rhoncus initis. lot Suspendisse ut elementum nunc. Aenean aliquam porta sem ins tincidunt congue. Phasellus dictum viverra sem id vehicula. Fus cenec elementum sapien.</p>
+              <h4 className="mb-3">Chào mừng đến với đại gia đình DIVADI</h4>
+              <h3>Hãy nhớ rằng hạnh phúc là con đường bạn đi, không phải là một điểm đến.</h3>
+              <p className="my-4">Chúng tôi mang lại cho bạn những gợi ý hữu ích và những trải nghiệm tuyệt vời, tìm hiểu và lên hành trang ở những nơi bạn đến thông qua những review, những tiện ích đi kèm khi mà giờ đây bạn có thể tự lên ý tưởng cho chuyến đi của bạn và chúng tôi sẽ gợi ý cho bạn những điểm đến thật lý tưởng</p>
               <a href="#">Read More</a>
             </div>
             <div className="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
@@ -88,7 +85,7 @@ function HomeScreen() {
                   <i className="fa fa-globe" aria-hidden="true" />
                 </div>
               </div>
-              <h4>Tempus eu turpis</h4>
+              <h4>Dịch Vụ Cho Thuê Xe Máy</h4>
               <p>Lorem ipsum dolor sit amet, do eiusmod tempor incididunt .Aliquam lacus turpis.</p>
             </div>
             <div className="col-lg-4 col-md-6 mt-md-0 mt-5 w3_agile_services_grid">
@@ -102,7 +99,7 @@ function HomeScreen() {
                   <i className="fa fa-suitcase" aria-hidden="true" />
                 </div>
               </div>
-              <h4>Lobortis quis dolor</h4>
+              <h4>ReView Thức Ăn</h4>
               <p>Lorem ipsum dolor sit amet, do eiusmod tempor incididunt .Aliquam lacus turpis.</p>
             </div>
             <div className="col-lg-4 col-md-6 mt-lg-0 mt-5 w3_agile_services_grid">
@@ -116,11 +113,11 @@ function HomeScreen() {
                   <i className="fa fa-bed" aria-hidden="true" />
                 </div>
               </div>
-              <h4>Dignissim rhoncus</h4>
+              <h4>Review Địa Điểm Vui Chơi</h4>
               <p>Lorem ipsum dolor sit amet, do eiusmod tempor incididunt .Aliquam lacus turpis.</p>
             </div>
             <div className="mx-auto mt-lg-4 mt-5 text-center">
-              <a href="services.html">Explore all Services</a>
+              <a href="services.html">Khám Phá Ngay</a>
             </div>
           </div>
         </div>

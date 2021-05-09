@@ -44,7 +44,7 @@ function Comment(props) {
         <div key={comment.id}>
             <div class="media mt-4 mb-4">
                 <div class="img-circle">
-                    <img src="https://meocuchay.com/wp-content/uploads/2020/08/hinh-nen-chu-cho-dang-yeu_052334445.jpg" class="img-fluid" alt="..." />
+                    <img src={comment.avartar} class="img-fluid" alt="..." />
                 </div>
                 <div class="media-body">
 

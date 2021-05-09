@@ -86,10 +86,10 @@ const PostDataTodolist =(todolistId,Place,Time_to_go,Time_to_visit,Transport,Not
         dispatch({ type: NOTE_POST_DATA_TODOLIST_FAIL, payload: error.message });
     }
 }
-const PutDataTodolist =(id,todolistId,Place,Time_to_go,Time_to_visit,Transport,Note)=> async (dispatch)=>{
+const PutDataTodolist =(id,todolistId,Time_to_go,Time_to_visit,Transport,Note)=> async (dispatch)=>{
     try{
-        dispatch({ type: NOTE_PUT_DATA_TODOLIST_REQUEST, payload:{id,todolistId,Place,Time_to_go,Time_to_visit,Transport,Note} });
-        const { data } = await axios.put("http://localhost:4000/api/data_todolist/"+id,{todolistId,Place,Time_to_go,Time_to_visit,Transport,Note});
+        dispatch({ type: NOTE_PUT_DATA_TODOLIST_REQUEST, payload:{id,todolistId,Time_to_go,Time_to_visit,Transport,Note} });
+        const { data } = await axios.patch("http://localhost:4000/api/data_todolist/"+id,{todolistId,Time_to_go,Time_to_visit,Transport,Note});
             dispatch({
                 type: NOTE_PUT_DATA_TODOLIST_SUCCESS, payload: data
             });

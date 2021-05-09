@@ -11,7 +11,7 @@ function RentMotoScreen(props) {
     const [Loaixe, setLoaixe] = useState('ALL');
     const [gia, setGia] = useState('ALL');
     const [searchtext, setSearchtext] = useState('')
-    const city=props.location.search ? props.location.search.split("=")[1] : '';
+    const city = props.location.search ? props.location.search.split("=")[1] : '';
     // const productList = useSelector((state) => state.productList);
     // const productlistcount = useSelector((state) => state.productcount);
     // const { product, loading, error } = productList;
@@ -50,7 +50,7 @@ function RentMotoScreen(props) {
         };
     }, []);
     useEffect(() => {
-        dispatch(SearchName(searchtext, page,city));
+        dispatch(SearchName(searchtext, page, city));
 
         return () => {
             //
@@ -72,11 +72,12 @@ function RentMotoScreen(props) {
     }, [Loaixe, gia, page]);
     return (
         <div className="container background">
-            
+
             <div>
                 <div>
                     <div class="row">
-                        <h3 class="tittle-w3l">THUÊ XE
+                        <h3 class="tittle-w3l">Thuê Xe Đà Nẵng
+                    
 				            <span class="heading-style">
                                 <i></i>
                                 <i></i>
@@ -139,20 +140,20 @@ function RentMotoScreen(props) {
                 }
             </ul>) : (loading ? <div>Loading...</div> :
                 error ? <div>{error}</div> :
-                    (products.length>0?
+                    (products.length > 0 ?
                         <ul class="list-moto animated wow slideInLeft" data-wow-delay=".5s">
                             {products.map((product) => (
                                 <Motobike key={product.id} product={product}></Motobike>
                             ))
                             }
-                        </ul>:(
+                        </ul> : (
                             <div class="not-found">
-                            
-                            <img src="https://lh3.googleusercontent.com/proxy/RG39UHd_sx7seuQ9ZgoTmbAr21DIxn9gv_jfMUL4A6IVNJbshp-Uv0s-uqfLC8dGWHhKsfD5mrHegGJWDUaZFCjvjSNwN18MWMNcVOU" class="img-responsive text-center" alt="Image"/>
-                            
-                        </div>
+
+                                <img src="https://lh3.googleusercontent.com/proxy/RG39UHd_sx7seuQ9ZgoTmbAr21DIxn9gv_jfMUL4A6IVNJbshp-Uv0s-uqfLC8dGWHhKsfD5mrHegGJWDUaZFCjvjSNwN18MWMNcVOU" class="img-responsive text-center" alt="Image" />
+
+                            </div>
                         )))}
-            <div className="pagination">
+            {/* <div className="pagination">
                 <li className="li_pagination">
                     <button onClick={downpagenumber} type="button" class="btn btn-outline-primary">Back</button>
                 </li>
@@ -160,7 +161,26 @@ function RentMotoScreen(props) {
                 <li className="li_pagination">
                     <button onClick={Uppagenumber} type="button" class="btn btn-outline-primary">Next</button>
                 </li>
-            </div>
+            </div> */}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a onClick={downpagenumber}  class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a onClick={Uppagenumber}  class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             {/* <Motobike></Motobike> */}
         </div>
     )

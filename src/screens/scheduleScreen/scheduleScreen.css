@@ -1,3 +1,4 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
 .listschedule{
     border: 0.5px solid #cccc;
     border-radius: 20px;
@@ -22,11 +23,16 @@
     height: 500px;
     overflow: auto;
 }
-.card img{
-    height: 200px;
-}
+
 .listDay{
     border: 0.5px solid #cccc;
     border-radius: 20px;
     margin-bottom: 20px;
 }
+.btn_add_time{
+    
+}
+.list_Day{
+    border-bottom: 0.5px solid #cccc;;
+}
+

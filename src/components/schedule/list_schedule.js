@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { GetTodolist, PostTodolist, GetDataTodolist, PostDataTodolist, PutDataTodolist, DeleteDataTodolist } from '../../actions/NoteActions'
+import './list_schedule.css'
 
 function List_schedule(props) {
     const [Time_to_go,setTime_to_go]=useState('')
     const [Time_to_visit,setTime_to_visit]=useState('')
     const [Transport,setTransport]=useState('')
     const [Note,setNote]=useState('')
+    const [idData,setidData]=useState('')
     const { todolistId } = props
     const Data_todolist_Get = useSelector((state) => state.Data_todolist_Get)
     const { Data_todolist } = Data_todolist_Get
@@ -17,11 +19,39 @@ function List_schedule(props) {
 
         }
     }, [todolistId])
-    const DataInFo=(Time_to_go,Time_to_visit,Transport,Note)=>{
+    const DataInFo=(Time_to_go,Time_to_visit,Transport,Note,id)=>{
         setTime_to_go(Time_to_go)
         setTime_to_visit(Time_to_visit)
         setTransport(Transport)
         setNote(Note)
+        setidData(id)
+    }
+    const OnSubmitHandel =()=>{
+        const promise = new Promise(function (resolve, reject) {
+            resolve(dispatch(PutDataTodolist(idData,todolistId,Time_to_go,Time_to_visit,Transport,Note))
+            );
+        })
+        promise.then(
+            function () {
+                dispatch(GetDataTodolist(todolistId))
+            });
+        promise.then(
+            function () {
+                alert('Thông tin của bạn được chỉnh sửa thành công')
+            });
+        
+    }
+    const OnDeleteSchedule=(id)=>{
+        alert('Bạn có chắc chắn muốn xóa thông tin này')
+        const promise = new Promise(function (resolve, reject) {
+            resolve( dispatch(DeleteDataTodolist(id))
+            );
+        })
+        promise.then(
+            function () {
+                dispatch(GetDataTodolist(todolistId))
+            });
+       
     }
     return (
         <div>
@@ -29,13 +59,13 @@ function List_schedule(props) {
                 <div class="row Day_CiTy">
                     <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 mt-2">
                         <div class="name_schedule">
-                            <p><i class="fas fa-angle-double-right mr-2">{item.Place}</i></p>
+                            <p class="Place"><i class="fas fa-angle-double-right mr-2">{item.Place}</i></p>
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 mt-2">
                         <ul class="Btn_schedule">
                             <li class="Btn_schedule_item mr-1">
-                                <button onClick={() => DataInFo(item.Time_to_go, item.Time_to_visit, item.Transport, item.Note)} data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-info"><i class="fas fa-hammer"></i></button>
+                                <button onClick={() => DataInFo(item.Time_to_go, item.Time_to_visit, item.Transport, item.Note,item.id)} data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-info"><i class="fas fa-hammer"></i></button>
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -46,7 +76,7 @@ function List_schedule(props) {
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form onSubmit={OnSubmitHandel}>
                                                     <div class="form-group">
                                                         <label for="formGroupExampleInput">Thời Gian Đến</label>
                                                         <select value={Time_to_go} onChange={(e)=>setTime_to_go(e.target.value)} class="custom-select" id="inputGroupSelect01">
@@ -102,7 +132,7 @@ function List_schedule(props) {
                                                         <label for="formGroupExampleInput">Ghi Chú</label>
                                                         <input value={Note} onChange={(e)=>setNote(e.target.value)} type="text" class="form-control" id="formGroupExampleInput" placeholder="Ghi Chú" />
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <button data-dismiss="modal" onClick={OnSubmitHandel} type="button" class="btn btn-primary">Submit</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -110,7 +140,7 @@ function List_schedule(props) {
                                 </div>
                             </li>
                             <li class="Btn_schedule_item">
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button onClick={()=>OnDeleteSchedule(item.id)} type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </li>
                         </ul>
                     </div>

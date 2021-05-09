@@ -16,11 +16,11 @@ import {
     PUSH_USER_LIKE__MOTO_SUCCESS,
     PUSH_USER_LIKE_MOTO_FAIL
 } from '../constants/CommentConstan';
-const createComment = (productId, name, comment, date, time,rating,like) => async (dispatch) => {
-    dispatch({ type: COMMENT_POST_REQUEST, payload: {productId, name, comment, date, time,rating,like } });
+const createComment = (productId, name, comment, date, time,rating,like,avartar) => async (dispatch) => {
+    dispatch({ type: COMMENT_POST_REQUEST, payload: {productId, name, comment, date, time,rating,like,avartar } });
     try {
         const { data } = await axios.post('http://localhost:4000/api/comments', {
-            productId, name, comment, date, time,rating,like
+            productId, name, comment, date, time,rating,like,avartar
         });
         dispatch({ type: COMMENT_POST_SUCCESS, payload: data });
     } catch (error) {

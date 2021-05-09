@@ -17,7 +17,8 @@ import {commentpostReducer,
 import {cartReducer} from './reducers/CartReducer';
 import {ReviewDLTCReducer, 
         ReviewDTLSReducer,
-        ReviewListDetailReducer} from './reducers/ReviewReducer';
+        ReviewListDetailReducer,
+        ReviewListReducer} from './reducers/ReviewReducer';
 import {FoodListReducer,
         FoodDetailReducer,
         FoodMenuReducer} from './reducers/FoodReducer';
@@ -92,7 +93,8 @@ const reducer = combineReducers({
     Data_todolist_Get:GetDataTodolistReducer,
     Post_Data_Todolist:PostDataTodolistReducer,
     Put_Data_Todolist:PutDataTodolistReducer,
-    GetDatatodolist_id:GetDataTodolistIDReducer
+    GetDatatodolist_id:GetDataTodolistIDReducer,
+    reviewList:ReviewListReducer
 });
 const store = createStore(
     reducer,

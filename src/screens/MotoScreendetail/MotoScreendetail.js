@@ -66,11 +66,13 @@ function MotoScreendetail(props) {
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const username = userInfo.length > 0 ? userInfo[0].displayName : null
+    const avartar = userInfo.length > 0 ? userInfo[0].image : null
     const usersigninId=userInfo.length > 0 ? userInfo[0].id : null
     const commentget = useSelector((state) => state.commentget)
     const { comments } = commentget
     const qty = 1;
     const like=0;
+    console.log(userInfo)
     // const Getuserlike=useSelector((state)=>state.Getuserlike)
     // const {userlike}= Getuserlike
     const [commentId,setcommentId]=useState('')
@@ -100,7 +102,7 @@ function MotoScreendetail(props) {
         setIsListening(false)
         const promise = new Promise(function (resolve, reject) {
             if (userInfo.length > 0) {
-                resolve(dispatch(createComment(productid, username, comment, date, time, rating,like)));
+                resolve(dispatch(createComment(productid, username, comment, date, time, rating,like,avartar)));
             }
             else {
                 reject(
@@ -145,7 +147,7 @@ function MotoScreendetail(props) {
         <div className="banner-bootom-w3-agileits">
             <div className="container">
                 {/* tittle heading */}
-                <h3 className="tittle-w3l-detail">Single Page
+                <h3 className="tittle-w3l-detail">Thông Tin Chi Tiết
                 <span className="heading-style-detail">
                         <i />
                         <i />

@@ -7,7 +7,10 @@ import{
     REVIEW_DTLS_FAIL,
     REVIEW_LISTDETAIL_REQUEST,
     REVIEW_LISTDETAIL_SUCCESS,
-    REVIEW_LISTDETAIL_FAIL
+    REVIEW_LISTDETAIL_FAIL,
+    REVIEW_LIST_REQUEST,
+    REVIEW_LIST_SUCCESS,
+    REVIEW_LIST_FAIL
     } from '../constants/ReviewConstant';
 function ReviewDLTCReducer(state = { DLTC: [] }, action) {
     switch (action.type) {
@@ -42,4 +45,15 @@ function ReviewListDetailReducer(state = { Review_list: [] }, action) {
         default: return state;
     }
 }
-export { ReviewDLTCReducer, ReviewDTLSReducer,ReviewListDetailReducer};
+function ReviewListReducer(state = { Reviews: [] }, action) {
+    switch (action.type) {
+        case REVIEW_LIST_REQUEST:
+            return { loading: true, Reviews: [] };
+        case REVIEW_LIST_SUCCESS:
+            return { loading: false, Reviews: action.payload };
+        case REVIEW_LIST_FAIL:
+            return { loading: false, error: action.payload };
+        default: return state;
+    }
+}
+export { ReviewDLTCReducer, ReviewDTLSReducer,ReviewListDetailReducer,ReviewListReducer};

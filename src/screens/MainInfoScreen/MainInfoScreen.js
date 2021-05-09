@@ -130,11 +130,8 @@ function MainInfoScrenn(props) {
             <div class="align-photo-6-inf-cols row">
 
               <div class="photo-6-inf-right col-lg-6">
-                <h3 class="hny-title text-left">All Branded Men's Suits are Flat <span>30% Discount</span></h3>
-                <p>Visit our shop to see amazing creations from our designers.</p>
-                <a href="#" class="read-more btn">
-                  Shop Now
-								</a>
+                <h3 class="hny-title text-left"><span>Đà Nẵng </span>thiên đường hút hàng triệu du khách đến mỗi năm</h3>
+                <p>Đà Nẵng đã thay đổi chóng mặt với tốc độ phát triển kinh hoàng đó là lời nhận xét của đa số mọi người khi quay lại nơi đây. Thành phố Đà Nẵng thuộc miền Trung của Việt Nam nằm giữa đất nước nên rất thuận tiện cho mọi người cả miền Bắc hoặc miền Nam di chuyển đến. Với vị trí tuyệt vời và kết hợp tham quan được cả Hội An và Huế bởi thế hàng năm thu hút hàng triệu du khách trong nước cũng như quốc tế đến tham quan du lịch.</p>
               </div>
               <div class="photo-6-inf-left col-lg-6">
                 <img src="https://static.ebk.vn/thienduongholiday.com/images/mk-av.jpg" class="img-fluid" alt="" />
@@ -165,12 +162,9 @@ function MainInfoScrenn(props) {
               </div>
               <div class="video-gd-left col-lg-4 p-lg-5 p-4">
                 <div class="p-xl-4 p-0 video-wrap">
-                  <h3 class="hny-title text-left">All Branded Women's Bags are Flat <span>30% Discount</span>
+                  <h3 class="hny-title text-left">Xem Video Giới Thiệu Về <span>Đà Nẵng</span>
                   </h3>
                   <p>Visit our shop to see amazing creations from our designers.</p>
-                  <a href="#" class="read-more btn">
-                    Shop Now
-						</a>
                 </div>
               </div>
 

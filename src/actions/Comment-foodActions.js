@@ -29,11 +29,11 @@ const getcommentfood =(foodId)=> async (dispatch)=>{
         dispatch({ type: COMMENT_FOOD_GET_FAIL, payload: error.message });
     }
 }
-const createCommentfood = (foodId, name, comment, date, time,rating,like) => async (dispatch) => {
-    dispatch({ type: COMMENT_FOOD_POST_REQUEST, payload: {foodId, name, comment, date, time,rating,like } });
+const createCommentfood = (foodId, name, comment, date, time,rating,like,avartar) => async (dispatch) => {
+    dispatch({ type: COMMENT_FOOD_POST_REQUEST, payload: {foodId, name, comment, date, time,rating,like,avartar} });
     try {
         const { data } = await axios.post('http://localhost:4000/api/comment-food', {
-            foodId, name, comment, date, time,rating,like
+            foodId, name, comment, date, time,rating,like,avartar
         });
         dispatch({ type: COMMENT_FOOD_POST_SUCCESS, payload: data });
     } catch (error) {

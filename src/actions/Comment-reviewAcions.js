@@ -29,11 +29,11 @@ const getcommentreview =(reviewId)=> async (dispatch)=>{
         dispatch({ type: COMMENT_REVIEW_GET_FAIL, payload: error.message });
     }
 }
-const createCommentreview = (reviewId, name, comment, date, time,rating,like) => async (dispatch) => {
-    dispatch({ type: COMMENT_REVIEW_POST_REQUEST, payload: {reviewId, name, comment, date, time,rating,like } });
+const createCommentreview = (reviewId, name, comment, date, time,rating,like,avartar) => async (dispatch) => {
+    dispatch({ type: COMMENT_REVIEW_POST_REQUEST, payload: {reviewId, name, comment, date, time,rating,like,avartar } });
     try {
         const { data } = await axios.post('http://localhost:4000/api/comment-review', {
-            reviewId, name, comment, date, time,rating,like
+            reviewId, name, comment, date, time,rating,like,avartar
         });
         dispatch({ type: COMMENT_REVIEW_POST_SUCCESS, payload: data });
     } catch (error) {

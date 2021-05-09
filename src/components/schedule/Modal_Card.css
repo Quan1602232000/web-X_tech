@@ -1,0 +1,14 @@
+.card-body p {
+    /* font-weight: bold; */
+}
+.card img{
+    height: 200px;
+    border-radius: 10px;
+}
+.card{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #d6d6d6 !important;
+}
+.modal-title{
+    color: black;
+}

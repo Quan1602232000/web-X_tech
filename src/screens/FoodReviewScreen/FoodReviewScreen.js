@@ -74,6 +74,7 @@ function FoodReviewScreen(props) {
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const username = userInfo.length > 0 ? userInfo[0].displayName : null
+    const avartar = userInfo.length > 0 ? userInfo[0].image : null
     const usersigninId = userInfo.length > 0 ? userInfo[0].id : null
     const like = 0;
     const options = {
@@ -109,7 +110,7 @@ function FoodReviewScreen(props) {
         setIsListening(false)
         const promise = new Promise(function (resolve, reject) {
             if (userInfo.length > 0) {
-                resolve(dispatch(createCommentfood(foodId, username, comment, date, time, rating, like)));
+                resolve(dispatch(createCommentfood(foodId, username, comment, date, time, rating, like,avartar)));
             }
             else {
                 reject(
