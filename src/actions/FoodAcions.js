@@ -15,12 +15,12 @@ const foodlistreview =(city,brand,page) => async (dispatch) =>{
     try{
         dispatch({type: FOOD_REVIEW_REQUEST, payload:{city,brand,page}});
         if(page==0){
-            const {data} = await axios.get("http://localhost:4000/api/foods/?city="+city+"&brand="+brand);
+            const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/foods/?city="+city+"&brand="+brand);
             dispatch({type:FOOD_REVIEW_SUCCESS, payload:data
             });
         }
         else{
-            const {data} = await axios.get("http://localhost:4000/api/foods/?city="+city+"&brand="+brand+"&_page=" + page + "&_limit=4");
+            const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/foods/?city="+city+"&brand="+brand+"&_page=" + page + "&_limit=4");
             dispatch({type:FOOD_REVIEW_SUCCESS, payload:data.data
             });
         }       
@@ -33,7 +33,7 @@ const foodlistreview =(city,brand,page) => async (dispatch) =>{
 const foodreviewdetail =(foodId) => async (dispatch) =>{
     try{
         dispatch({type: FOOD_REVIEW_DETAIL_REQUEST, payload:foodId});
-        const {data} = await axios.get("http://localhost:4000/api/foods/"+foodId);
+        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/foods/"+foodId);
             dispatch({type:FOOD_REVIEW_DETAIL_SUCCESS, payload:data
             });
     }
@@ -44,7 +44,7 @@ const foodreviewdetail =(foodId) => async (dispatch) =>{
 const foodreviewmenu =(foodId) => async (dispatch) =>{
     try{
         dispatch({type: FOOD_REVIEW_MENU_REQUEST, payload:foodId});
-        const {data} = await axios.get("http://localhost:4000/api/menu/?foodId="+foodId);
+        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/menu/?foodId="+foodId);
             dispatch({type:FOOD_REVIEW_MENU_SUCCESS, payload:data
             });
     }

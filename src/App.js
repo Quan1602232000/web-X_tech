@@ -22,7 +22,7 @@ import ReviewScrennDetail from './screens/ReviewScrennDetail/ReviewScrennDetail'
 import TodolistSreen from './screens/TodolistSreen/TodolistSreen'
 import NoteScreen from './screens/NoteScreen/NoteScreen'
 import scheduleScreen from './screens/scheduleScreen/scheduleScreen'
-import { GetTodolist, PostTodolist} from './actions/NoteActions'
+import { GetTodolist, PostTodolist } from './actions/NoteActions'
 import ScheduleAddScreen from './screens/scheduleAddScreen/scheduleAddScreen'
 import CheckoutScreen from './screens/CheckoutScreen/CheckoutScreen'
 
@@ -36,7 +36,7 @@ function App(props) {
   const Todolist_Get = useSelector((state) => state.Todolist_Get)
   const { Todolist } = Todolist_Get
   const dispatch = useDispatch();
-  console.log( Todolist)
+  console.log(Todolist)
   const signoutHandler = () => {
     dispatch(signout());
   };
@@ -45,7 +45,7 @@ function App(props) {
     return () => {
 
     }
-}, [usersigninId])
+  }, [usersigninId])
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -144,8 +144,8 @@ function App(props) {
                 </ul>
               </li>  					            */}
                 <li><Link to="/Weather">THỜI TIẾT</Link></li>
-                {Todolist.length==0?<li><Link to="/ScheduleAddScreen">GHI CHÚ</Link></li> :<li><Link to="/scheduleScreen">GHI CHÚ</Link></li>}
-                
+                {Todolist.length == 0 ? <li><Link to="/ScheduleAddScreen">GHI CHÚ</Link></li> : <li><Link to="/scheduleScreen">GHI CHÚ</Link></li>}
+
               </ul>
             </div>
             <Search></Search>

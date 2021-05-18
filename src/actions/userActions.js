@@ -6,7 +6,7 @@ import {
 const signin = (email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
   try {
-    const { data } = await axios.get('http://localhost:4000/api/users?email=' + email + '&password=' + password)
+    const { data } = await axios.get('https://divadi-demo.herokuapp.com/api/users?email=' + email + '&password=' + password)
     if (data.length > 0) {
       dispatch({ type: USER_SIGNIN_SUCCESS, payload: data })
       localStorage.setItem('userInfo', JSON.stringify(data));
@@ -28,7 +28,7 @@ const signin = (email, password) => async (dispatch) => {
 const register = (displayName, email, password,image) => async (dispatch) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
   try {
-    const { data } = await axios.post('http://localhost:4000/api/users', {
+    const { data } = await axios.post('https://divadi-demo.herokuapp.com/api/users', {
       displayName, email, password, image
     });
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
@@ -47,7 +47,7 @@ const register = (displayName, email, password,image) => async (dispatch) => {
 const getuserprofile =(userid)=> async(dispatch)=>{
   dispatch({ type: USER_USERPROFILE_REQUEST, payload: userid });
   try {
-    const { data } = await axios.get('http://localhost:4000/api/userprofiles/?userId='+userid);
+    const { data } = await axios.get('https://divadi-demo.herokuapp.com/api/userprofiles/?userId='+userid);
     dispatch({ type: USER_USERPROFILE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({

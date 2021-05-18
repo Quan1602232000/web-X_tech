@@ -12,7 +12,7 @@ import axios from 'axios';
 const listProducts =(pagenumber) => async (dispatch) =>{
     try{
         dispatch({type: PRODUCT_LIST_REQUEST, payload:pagenumber});
-        const {data} = await axios.get("http://localhost:4000/api/products/?_page="+ pagenumber +"&_limit=6");
+        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/products/?_page="+ pagenumber +"&_limit=6");
         dispatch({type:PRODUCT_LIST_SUCCESS, payload:data.data
       });
     }
@@ -23,7 +23,7 @@ const listProducts =(pagenumber) => async (dispatch) =>{
 const totalRow =() => async (dispatch) =>{
     try{
         dispatch({type: PRODUCT_TOTALROW_REQUEST});
-        const {data} = await axios.get("http://localhost:4000/api/products/?_page=1&_limit=5");
+        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/products/?_page=1&_limit=5");
         dispatch({type:PRODUCT_TOTALROW_SUCCESS, payload:data.pagination
       });
       localStorage.setItem('total', JSON.stringify(data.pagination));
@@ -35,7 +35,7 @@ const totalRow =() => async (dispatch) =>{
 const productdetail =(id) => async (dispatch) =>{
     try{
         dispatch({type: PRODUCT_DETAIL_REQUEST, payload:id});
-        const {data} = await axios.get("http://localhost:4000/api/products/"+id);
+        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/products/"+id);
         dispatch({type:PRODUCT_DETAIL_SUCCESS, payload:data
       });
     }

@@ -27,7 +27,7 @@ import axios from 'axios';
 const GetTodolist =(userId)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_GET_TODOLISTS_REQUEST, payload:userId });
-        const { data } = await axios.get("http://localhost:4000/api/todolists/?userId="+userId);
+        const { data } = await axios.get("https://divadi-demo.herokuapp.com/api/todolists/?userId="+userId);
             dispatch({
                 type: NOTE_GET_TODOLISTS_SUCCESS, payload: data
             });
@@ -40,7 +40,7 @@ const GetTodolist =(userId)=> async (dispatch)=>{
 const PostTodolist =(userId,date)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_POST_TODOLISTS_REQUEST, payload:{userId,date} });
-        const { data } = await axios.post("http://localhost:4000/api/todolists",{userId,date});
+        const { data } = await axios.post("https://divadi-demo.herokuapp.com/api/todolists",{userId,date});
             dispatch({
                 type: NOTE_POST_TODOLISTS_SUCCESS, payload: data
             });
@@ -53,7 +53,7 @@ const PostTodolist =(userId,date)=> async (dispatch)=>{
 const GetDataTodolist =(todolistId)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_GET_DATA_TODOLIST_REQUEST, payload:todolistId });
-        const { data } = await axios.get("http://localhost:4000/api/data_todolist/?todolistId="+todolistId);
+        const { data } = await axios.get("https://divadi-demo.herokuapp.com/api/data_todolist/?todolistId="+todolistId);
             dispatch({
                 type: NOTE_GET_DATA_TODOLIST_SUCCESS, payload: data
             });
@@ -65,7 +65,7 @@ const GetDataTodolist =(todolistId)=> async (dispatch)=>{
 const GetDataTodolist_id =(id)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_GET_DATA_TODOLIST_ID_REQUEST, payload:id });
-        const { data } = await axios.get("http://localhost:4000/api/data_todolist/"+id);
+        const { data } = await axios.get("https://divadi-demo.herokuapp.com/api/data_todolist/"+id);
             dispatch({
                 type: NOTE_GET_DATA_TODOLIST_ID_SUCCESS, payload: data
             });
@@ -77,7 +77,7 @@ const GetDataTodolist_id =(id)=> async (dispatch)=>{
 const PostDataTodolist =(todolistId,Place,Time_to_go,Time_to_visit,Transport,Note)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_POST_DATA_TODOLIST_REQUEST, payload:{todolistId,Place,Time_to_go,Time_to_visit,Transport,Note} });
-        const { data } = await axios.post("http://localhost:4000/api/data_todolist",{todolistId,Place,Time_to_go,Time_to_visit,Transport,Note});
+        const { data } = await axios.post("https://divadi-demo.herokuapp.com/api/data_todolist",{todolistId,Place,Time_to_go,Time_to_visit,Transport,Note});
             dispatch({
                 type: NOTE_POST_DATA_TODOLIST_SUCCESS, payload: data
             });
@@ -89,7 +89,7 @@ const PostDataTodolist =(todolistId,Place,Time_to_go,Time_to_visit,Transport,Not
 const PutDataTodolist =(id,todolistId,Time_to_go,Time_to_visit,Transport,Note)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_PUT_DATA_TODOLIST_REQUEST, payload:{id,todolistId,Time_to_go,Time_to_visit,Transport,Note} });
-        const { data } = await axios.patch("http://localhost:4000/api/data_todolist/"+id,{todolistId,Time_to_go,Time_to_visit,Transport,Note});
+        const { data } = await axios.patch("https://divadi-demo.herokuapp.com/api/data_todolist/"+id,{todolistId,Time_to_go,Time_to_visit,Transport,Note});
             dispatch({
                 type: NOTE_PUT_DATA_TODOLIST_SUCCESS, payload: data
             });
@@ -101,7 +101,7 @@ const PutDataTodolist =(id,todolistId,Time_to_go,Time_to_visit,Transport,Note)=>
 const DeleteDataTodolist =(id)=> async (dispatch)=>{
     try{
         dispatch({ type: NOTE_DELETE_DATA_TODOLIST_REQUEST, payload:id });
-        const { data } = await axios.delete("http://localhost:4000/api/data_todolist/"+id);
+        const { data } = await axios.delete("https://divadi-demo.herokuapp.com/api/data_todolist/"+id);
             dispatch({
                 type: NOTE_DELETE_DATA_TODOLIST_SUCCESS, payload: data
             });
