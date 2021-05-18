@@ -163,7 +163,7 @@ function ReviewScrennDetail(props) {
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 text-center">
                                     <div class="about-span-txt">
-                                        <span class="fa fa-sun-o" aria-hidden="true"></span>
+                                        <span class="fas fa-sun" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </div>

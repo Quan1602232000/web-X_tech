@@ -49,7 +49,7 @@ function MainInfoScrenn(props) {
         {/* /content-6-section */}
         <div class="grids-hny-2-mian py-5">
           <div class="container py-lg-5">
-            <h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
+            <h3 class="hny-title mb-0 text-center">Đà Nẵng <span>Us</span></h3>
             <p class="mb-4 text-center">Handpicked Favourites just for you</p>
             <div class="welcome-grids row mt-5">
               <div class="col-lg-2 col-md-4 col-6 welcome-image">

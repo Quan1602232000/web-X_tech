@@ -25,11 +25,11 @@ const signin = (email, password) => async (dispatch) => {
     });
   }
 }
-const register = (displayName, email, password) => async (dispatch) => {
+const register = (displayName, email, password,image) => async (dispatch) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
   try {
     const { data } = await axios.post('http://localhost:4000/api/users', {
-      displayName, email, password
+      displayName, email, password, image
     });
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
     localStorage.setItem('userInfo', JSON.stringify(data));

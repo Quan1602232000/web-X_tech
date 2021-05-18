@@ -82,7 +82,7 @@ function CartScreen(props) {
                 </div>
                 <div className="checkout-left">
                     <div className="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-                        <Link to="/RentMoto/?city=Đà Nẵng"><h4>Continue to basket</h4></Link>
+                        <Link to="/RentMoto/?city=Đà Nẵng"><h4>Tiếp Tục Lựa Chọn</h4></Link>
                         <ul>
                             {
                                 cartItems.length === 0 ?

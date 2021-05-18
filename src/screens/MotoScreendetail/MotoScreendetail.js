@@ -144,7 +144,7 @@ function MotoScreendetail(props) {
     };
 
     return (
-        <div className="banner-bootom-w3-agileits">
+        <div className="banner-bootom-w3-agileits mt-3">
             <div className="container">
                 {/* tittle heading */}
                 <h3 className="tittle-w3l-detail">Thông Tin Chi Tiết
@@ -256,7 +256,7 @@ function MotoScreendetail(props) {
                                 <div class="card-body">
                                     <ul>
                                         <li><i class="fas fa-angle-double-right"></i>
-                                    Bạn sẽ nhận được email xác nhận và voucher ngay sau khi đặt. Trong trường hợp bạn không nhận được email từ chúng tôi, xin hãy kiểm tra thư mục Spam hoặc báo lại cho chúng tôi biết qua email
+                                    Bạn sẽ nhận được email xác nhận ngay sau khi đặt. Trong trường hợp bạn không nhận được email từ chúng tôi, xin hãy kiểm tra thư mục Spam hoặc báo lại cho chúng tôi biết qua email
                                     </li>
                                     </ul>
 

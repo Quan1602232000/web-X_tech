@@ -71,7 +71,7 @@ function RentMotoScreen(props) {
         };
     }, [Loaixe, gia, page]);
     return (
-        <div className="container background">
+        <div className="container background mt-3">
 
             <div>
                 <div>
@@ -163,24 +163,18 @@ function RentMotoScreen(props) {
                 </li>
             </div> */}
             <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a onClick={downpagenumber}  class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a onClick={Uppagenumber}  class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                    <ul class="pagination justify-content-center ">
+                        <li class="page-item">
+                            <a onClick={downpagenumber} class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a onClick={Uppagenumber} class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             {/* <Motobike></Motobike> */}
         </div>
     )

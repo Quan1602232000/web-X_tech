@@ -72,9 +72,9 @@ function CheckoutScreen() {
                                 <form>
                                     <div class="form-row">
                                         <div class="col form-group">
-                                            <label>Giờ đón&nbsp;<span style={{ color: "red" }}>*</span></label>
+                                            <label>Ngày Thuê&nbsp;<span style={{ color: "red" }}>*</span></label>
                                             <input type="text" class="form-control"
-                                                placeholder="Chúng tôi sẽ xác nhận qua email" />
+                                                placeholder="Chọn Ngày Thuê" />
                                         </div>
                                         <div class="col form-group">
                                             <label>Khách sạn/Địa chỉ&nbsp;<span style={{ color: "red" }}>*</span></label>
@@ -94,7 +94,7 @@ function CheckoutScreen() {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Vâng tôi trên 18 tuổi và đã có giấy phép lái xe&nbsp;<span
+                                        <label>Vâng tôi trên 18 tuổi và đã có giấy phép lái xe<span
                                             style={{ color: "red" }}>*</span></label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
@@ -103,13 +103,12 @@ function CheckoutScreen() {
                                                 </div>
                                             </div>
                                             <input type="text" class="form-control"
-                                                placeholder="Vui lòng xác nhận rằng bạn trên 18 tuổi và có bằng lái xe máy" />
+                                                placeholder="Vui lòng xác nhận" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Thông tin liên hệ (WeChat, Whatsapp, LINE, Telegram, KakaoTalk, Viber) và số
-                                        điện thoại liên lạc&nbsp;<span style={{ color: "red" }}>*</span></label>
-                                        <input type="email" class="form-control" placeholder="Vd: Whatsapp +66 12345678" />
+                                        <label>Thông tin liên hệ (Gmail,Facebook,SDT)&nbsp;<span style={{ color: "red" }}>*</span></label>
+                                        <input type="email" class="form-control" placeholder="Vd: nguyenhongquan2310@gmail.com" />
                                     </div>
                                 </form>
                             </div>

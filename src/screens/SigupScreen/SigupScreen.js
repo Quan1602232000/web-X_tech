@@ -22,12 +22,12 @@ function SigupScreen(props) {
           //
         };
       }, [userInfo]);
-    const image=""
+    const image="https://i.pinimg.com/originals/0b/aa/4c/0baa4ce4a38e06e825013a8b6f858528.jpg"
 
     const submitHandler = (e) => {
         e.preventDefault();
         password==rePassword?
-        dispatch(register(name,email,password)):alert('xác nhận mật khẩu không đúng')
+        dispatch(register(name,email,password,image)):alert('xác nhận mật khẩu không đúng')
     }
     return (
         <div>
