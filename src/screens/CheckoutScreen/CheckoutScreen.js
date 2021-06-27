@@ -2,9 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeFromCart } from '../../actions/cartActions';
+import ReactDOM from "react-dom"
 import './CheckoutScreen.css';
 
+const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
+
+
 function CheckoutScreen() {
+    const createOrder = (data, actions) => {
+        return actions.order.create({
+            purchase_units: [
+                {
+                    amount: {
+                        value: "0.01",
+                    },
+                },
+            ],
+        });
+    }
+    const onApprove = (data, actions) => {
+        return actions.order.capture();
+    }
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
     const dispatch = useDispatch();
@@ -156,12 +174,13 @@ function CheckoutScreen() {
                     <div class="col-md-12">
                         <div class="card">
                             <header class="card-header">
-                                <h4 class="card-title mt-2">Loại ưu đãi</h4>
+                                <h4 class="card-title mt-2">Thanh Toán</h4>
                             </header>
-                            <article class="card-body">
-                                <div class="btn btn-outline-success">
-                                    <i class="fas fa-tags mr-1"></i><span>Sử dụng mã ưu đãi</span>
-                                </div>
+                            <article class="card-body Payment">
+                            <PayPalButton
+                                createOrder={(data, actions) => createOrder(data, actions)}
+                                onApprove={(data, actions) => onApprove(data, actions)}
+                            />
                             </article>
                         </div>
                     </div>

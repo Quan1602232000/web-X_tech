@@ -6,7 +6,7 @@ import {
 
 const addToCart =(productid, qty)=> async (dispatch, getState)=>{
     try{
-        const { data } = await axios.get('https://divadi-demo.herokuapp.com/api/products/'+ productid);
+        const { data } = await axios.get('http://localhost:4000/api/products/'+ productid);
     dispatch({
       type: CART_ADD_ITEM, payload: {
         id: data.id,

@@ -19,7 +19,7 @@ import {
 const createComment = (productId, name, comment, date, time,rating,like,avartar) => async (dispatch) => {
     dispatch({ type: COMMENT_POST_REQUEST, payload: {productId, name, comment, date, time,rating,like,avartar } });
     try {
-        const { data } = await axios.post('https://divadi-demo.herokuapp.com/api/comments', {
+        const { data } = await axios.post('http://localhost:4000/api/comments', {
             productId, name, comment, date, time,rating,like,avartar
         });
         dispatch({ type: COMMENT_POST_SUCCESS, payload: data });
@@ -36,7 +36,7 @@ const createComment = (productId, name, comment, date, time,rating,like,avartar)
 const getcomment =(productId)=> async (dispatch)=>{
     try{
         dispatch({ type: COMMENT_GET_REQUEST, payload:productId });
-        const { data } = await axios.get("https://divadi-demo.herokuapp.com/api/comments/?productId="+productId);
+        const { data } = await axios.get("http://localhost:4000/api/comments/?productId="+productId);
             dispatch({
                 type: COMMENT_GET_SUCCESS, payload: data
             });
@@ -48,7 +48,7 @@ const getcomment =(productId)=> async (dispatch)=>{
 const getUserLike=(userId)=>async (dispatch)=>{
     try{
         dispatch({ type: USER_LIKE_REQUEST, payload:userId });
-        const { data } = await axios.get("https://divadi-demo.herokuapp.com/api/user_like/?userId="+userId);
+        const { data } = await axios.get("http://localhost:4000/api/user_like/?userId="+userId);
             dispatch({
                 type: USER_LIKE_SUCCESS, payload: data
             });
@@ -60,7 +60,7 @@ const getUserLike=(userId)=>async (dispatch)=>{
 const pushUserLike=(commentId,userId)=>async (dispatch)=>{
     try{
         dispatch({ type: PUSH_USER_LIKE_MOTO_REQUEST, payload:{commentId,userId} });
-        const { data } = await axios.post("https://divadi-demo.herokuapp.com/api/user_like",{commentId,userId});
+        const { data } = await axios.post("http://localhost:4000/api/user_like",{commentId,userId});
             dispatch({
                 type: PUSH_USER_LIKE__MOTO_SUCCESS, payload: data
             });
@@ -72,7 +72,7 @@ const pushUserLike=(commentId,userId)=>async (dispatch)=>{
 const PutLike=(commentId,like)=>async (dispatch)=>{
     try{
         dispatch({ type: NUMBER_LIKE_MOTO_REQUEST, payload:{commentId,like}});
-        const { data } = await axios.patch("https://divadi-demo.herokuapp.com/api/comments/"+commentId,{like});
+        const { data } = await axios.patch("http://localhost:4000/api/comments/"+commentId,{like});
             dispatch({
                 type: NUMBER_LIKE__MOTO_SUCCESS, payload: data
             });

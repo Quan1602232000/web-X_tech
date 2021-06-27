@@ -12,3 +12,16 @@
 .modal-title{
     color: black;
 }
+
+.card-address{
+    margin: auto;
+    height: 500px;
+    overflow: auto;
+}
+/* .modal_test{
+    max-height: 100px !important;
+} */
+/* .modal_test{
+
+    max-height: 400px !important;
+} */

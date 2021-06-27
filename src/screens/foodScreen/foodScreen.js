@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import CardFood from '../../components/CardFood/CardFood';
 import { useSelector, useDispatch } from 'react-redux';
 import './foodScreen.css';
@@ -19,6 +19,7 @@ function FoodScreen(props) {
     const FoodFilter =useSelector((state)=>state.FoodFilter)
     const {foods_filter}=FoodFilter
     const dispatch = useDispatch();
+    const RefCity=useRef(CITY)
 
     useEffect(() => {
         dispatch(FilterFood(CITY, brand,rating,price,page))
@@ -46,7 +47,7 @@ function FoodScreen(props) {
                     <div class="row">
                         <div class="title-content text-left mb-lg-5 mb-4">
                             <h6 class="sub-title">Visit</h6>
-                            <h3 class="hny-title" >{Food_list.length > 0 ? Food_list[0].brand : ''}</h3>
+                            <h3 class="hny-title" >{Food_list.length>0?Food_list[0].brand:''}</h3>
                         </div>
                     </div>
 

@@ -10,14 +10,17 @@ import{
     REVIEW_LISTDETAIL_FAIL,
     REVIEW_LIST_REQUEST,
     REVIEW_LIST_SUCCESS,
-    REVIEW_LIST_FAIL
+    REVIEW_LIST_FAIL,
+    REVIEW_LIST_BY_NAME_REQUEST,
+    REVIEW_LIST_BY_NAME_SUCCESS,
+    REVIEW_LIST_BY_NAME_FAIL
     } from '../constants/ReviewConstant';
 import axios from 'axios';
 
 const ReviewDLTC =(city,brand) => async (dispatch) =>{
     try{
         dispatch({type: REVIEW_DLTC_REQUEST, payload:{city,brand}});
-        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/reviews/?city="+city+"&brand="+brand);
+        const {data} = await axios.get("http://localhost:4000/api/reviews/?city="+city+"&brand="+brand);
             dispatch({type:REVIEW_DLTC_SUCCESS, payload:data
             });
     }
@@ -25,10 +28,11 @@ const ReviewDLTC =(city,brand) => async (dispatch) =>{
         dispatch({ type: REVIEW_DLTC_FAIL, payload: error.message });
     }
 }
+
 const ReviewDTLS =(city,brand) => async (dispatch) =>{
     try{
         dispatch({type: REVIEW_DTLS_REQUEST, payload:{city,brand}});
-        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/reviews/?city="+city+"&brand="+brand);
+        const {data} = await axios.get("http://localhost:4000/api/reviews/?city="+city+"&brand="+brand);
             dispatch({type:REVIEW_DTLS_SUCCESS, payload:data
             });
     }
@@ -39,7 +43,7 @@ const ReviewDTLS =(city,brand) => async (dispatch) =>{
 const ReviewListDetail =(city,brand,page) => async (dispatch) =>{
     try{
         dispatch({type: REVIEW_LISTDETAIL_REQUEST, payload:{city,brand,page}});
-        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/reviews/?city="+city+"&brand="+brand+"&_page=" + page + "&_limit=4");
+        const {data} = await axios.get("http://localhost:4000/api/reviews/?city="+city+"&brand="+brand+"&_page=" + page + "&_limit=4");
             dispatch({type:REVIEW_LISTDETAIL_SUCCESS, payload:data.data
             });
     }
@@ -50,7 +54,7 @@ const ReviewListDetail =(city,brand,page) => async (dispatch) =>{
 const ReviewList =(city) => async (dispatch) =>{
     try{
         dispatch({type: REVIEW_LIST_REQUEST, payload:city});
-        const {data} = await axios.get("https://divadi-demo.herokuapp.com/api/reviews/?city="+city);
+        const {data} = await axios.get("http://localhost:4000/api/reviews/?city="+city);
             dispatch({type:REVIEW_LIST_SUCCESS, payload:data
             });
     }

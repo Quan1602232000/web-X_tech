@@ -21,7 +21,8 @@ import {ReviewDLTCReducer,
         ReviewListReducer} from './reducers/ReviewReducer';
 import {FoodListReducer,
         FoodDetailReducer,
-        FoodMenuReducer} from './reducers/FoodReducer';
+        FoodMenuReducer,
+        FoodReviewByCBReducer} from './reducers/FoodReducer';
 import {commentFoodgetReducer,
         commentfoodpostReducer,getuserlikefoodReducer,PutlikefoodReducer,PushuserlikefoodReducer} from './reducers/CommentfoodReducer';
 import {ReviewDetail_2_Reducer,ReviewDetail_1_Reducer} from './reducers/ReviewDetailReducer'
@@ -36,6 +37,23 @@ import {GettodolistReducer,
         PostDataTodolistReducer,
         PutDataTodolistReducer,
         GetDataTodolistIDReducer} from './reducers/NoteReducer'       
+import {
+        forumgetbycityreducer,
+        forumpostreducer,
+        forumgetbyIdreducer,
+        getuserlikeforumreducer,
+        postuserlikeforumreducer,
+        putlikeforumreducer,
+        forumgetbynamereducer
+} from './reducers/ForumReducer'
+import {
+        commentforumpostReducer,
+        commentforumgetReducer,
+        getuserlikecommentforumReducer,
+        putlikecommentforumReducer,
+        pushuserlikecommentforumReducer
+
+} from './reducers/CommentforumReducer'
 
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -94,7 +112,20 @@ const reducer = combineReducers({
     Post_Data_Todolist:PostDataTodolistReducer,
     Put_Data_Todolist:PutDataTodolistReducer,
     GetDatatodolist_id:GetDataTodolistIDReducer,
-    reviewList:ReviewListReducer
+    reviewList:ReviewListReducer,
+    forumbycity: forumgetbycityreducer,
+    forumPost:forumpostreducer,
+    forumcommentpost:commentforumpostReducer,
+    forumcommentget:commentforumgetReducer,
+    forrumgetbyid:forumgetbyIdreducer,
+    getuserlikecommentforum:getuserlikecommentforumReducer,
+    putlikecommentforum:putlikecommentforumReducer,
+    pushuserlikecommentforum:pushuserlikecommentforumReducer,
+    getuserlikeforum:getuserlikeforumreducer,
+    postuserlikeforum:postuserlikeforumreducer,
+    putlikeforum:putlikeforumreducer,
+    FoodReviewByCB:FoodReviewByCBReducer,
+    forumgetbyname:forumgetbynamereducer
 });
 const store = createStore(
     reducer,

@@ -7,8 +7,6 @@ import SignupScreen from './screens/SigupScreen/SigupScreen';
 import Weather from './screens/Weather/Weather';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
 import RentMotoScreen from './screens/RentMotoScreen/RentMotoScreen';
 import MotoScreendetail from './screens/MotoScreendetail/MotoScreendetail';
@@ -25,6 +23,7 @@ import scheduleScreen from './screens/scheduleScreen/scheduleScreen'
 import { GetTodolist, PostTodolist } from './actions/NoteActions'
 import ScheduleAddScreen from './screens/scheduleAddScreen/scheduleAddScreen'
 import CheckoutScreen from './screens/CheckoutScreen/CheckoutScreen'
+import ForumScreen from './screens/ForumScreen/ForumScreen'
 
 
 function App(props) {
@@ -36,7 +35,6 @@ function App(props) {
   const Todolist_Get = useSelector((state) => state.Todolist_Get)
   const { Todolist } = Todolist_Get
   const dispatch = useDispatch();
-  console.log(Todolist)
   const signoutHandler = () => {
     dispatch(signout());
   };
@@ -174,6 +172,7 @@ function App(props) {
           <Route path="/scheduleScreen" component={scheduleScreen}></Route>
           <Route path="/ScheduleAddScreen" component={ScheduleAddScreen}></Route>
           <Route path="/CheckoutScreen" component={CheckoutScreen}></Route>
+          <Route path="/ForumScreen" component={ForumScreen}></Route>
 
         </div>
       </main>

@@ -56,7 +56,7 @@ function Modal_Card(props) {
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body modal_test">
                                             <form>
                                                 <div class="form-group">
                                                     <label for="formGroupExampleInput">Thời Gian Đến</label>
